@@ -1,0 +1,11 @@
+.list-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+h1{
+    text-align: center;
+    color: rgb(250, 138, 138);
+}

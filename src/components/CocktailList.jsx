@@ -1,25 +1,26 @@
 import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
+import './CocktailList.css';
 
 const CocktailList = () => {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        fetch(`https:www.thecocktaildb.com/api/json/v1/1/search.php?f=a`)
+        
+        fetch(`https:www.thecocktaildb.com/api/json/v1/1/search.php?f=abcdef`)
         .then(response => response.json())
         .then(data => setCocktails(data.drinks))
-        
     }, []);
     
     return (
         <>
-            <h1>Cocktails List</h1>   
-            {cocktails.map((cocktail) => (
-                <div>
+            <h1>Cocktails List</h1>
+            <div className="list-container">   
+                {cocktails.map((cocktail) => (
                     <CocktailCard Key={cocktail.idDrink} {...cocktail} />
-                </div>
-               ))
-            }
+                ))
+                }
+            </div>
         </>
     )
 };

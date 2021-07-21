@@ -5,11 +5,11 @@ import NavBar from "./NavBar";
 const Home = () => {
     return (
         <>
-        <NavBar />
-        <CocktailList />
-        <Footer />
+            <NavBar />
+            <CocktailList />
+            <Footer />
         </>
     )
-    }
+}
 
 export default Home;

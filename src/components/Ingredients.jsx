@@ -1,4 +1,4 @@
-const ingredients = () => {
+const Ingredients = () => {
     const getIngredients = Object.keys(cocktail)
     .filter(function (keyObject) {
         return keyObject.includes("strIngredient");
@@ -13,9 +13,9 @@ const ingredients = () => {
 
 // for (let key in getIngredients) {
 //   let value = getIngredients[key];
-    return (
-        
+    return ( 
         <CocktailCard  ingredients={this.getIngredients}/>
-
     )
 }
+
+export default Ingredients;

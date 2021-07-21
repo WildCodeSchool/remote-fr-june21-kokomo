@@ -3,36 +3,25 @@ import CocktailList from './components/CocktailList';
 import CocktailDetails from './components/CocktailDetails';
 import Home from './components/Home';
 
-
 import './App.css';
 
 const App = () => {
   return (
-    <div class="app">
+    <div className="app">
       <BrowserRouter>
-     
-    
-
-      <Switch>
-        <Route exact path="/"> 
-          <Home />
-        </Route>
-        <Route path="/cocktails">
-         <CocktailList />
-        </Route>
-        <Route path="/cocktails/:id">
-          <CocktailDetails/>
-        </Route>
-
-
-      </Switch>
-      
-      
+        <Switch>
+          <Route exact path="/"> 
+            <Home />
+          </Route>
+          <Route exact path="/cocktails">
+            <CocktailList />
+          </Route>
+          <Route exact path="/cocktails/:id">
+            <CocktailDetails/>
+          </Route>
+        </Switch>
       </BrowserRouter>
-      
-    
     </div>
   );
 }
-
 export default App;
