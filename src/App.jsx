@@ -22,6 +22,8 @@ const App = () => {
             <Header />
             <CocktailDetails/>
           </Route>
+          <Route path="/search/:strDrink">
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

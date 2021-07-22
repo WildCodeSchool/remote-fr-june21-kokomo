@@ -1,17 +1,8 @@
-/* .title-background {
-    display: flex;
-    align-items: center;
-    background-color: #36685d;
-    color : rgb(251, 251, 251);
-    height: 40px;
-    
-} */
 
 .card-container {
-    background-color: rgb(194, 206, 172);
     margin: 10px;
     width: 20%;
-    height: auto;
+    height: 60%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -24,9 +15,10 @@
 }
 
 h2 {
-    background-color: #36685D;
-    height: 60px;
+    padding-top: 5px;
+    height: 60%;
     width: 100%;
+    background-color: #36685D;
     box-shadow: 0, 4, 4, 0, rgba(0,0,0,2.5);
 }
 
@@ -34,19 +26,16 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 85px;
+    height: 65px;
     width: 100%;
-
 
     background-image: url("../assets/pattern.jpg");
     background-repeat: repeat-x;
     background-size: 100%;
 }
 
-
 .navlink {
     display : block;
-   
 }
 
 .pattern {

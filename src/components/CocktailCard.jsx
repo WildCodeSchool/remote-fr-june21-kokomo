@@ -13,7 +13,6 @@ const CocktailCard = ({strDrinkThumb, strDrink, idDrink }) => {
                 </NavLink>
                 <figcaption>
                     <div className="title-background">
-                        
                         <h2>{strDrink}</h2>
                     </div>
                 </figcaption>

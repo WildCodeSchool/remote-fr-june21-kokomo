@@ -12,8 +12,7 @@ useEffect(() => {
 }, []);
     
 return (
-    <>
-      
+    <>    
         <h1>Cocktails List</h1>
         <div className="list-container">   
             {cocktails.map((cocktail) => (
@@ -26,5 +25,3 @@ return (
 };
 
 export default CocktailList;
-
-
