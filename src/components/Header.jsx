@@ -6,20 +6,16 @@ const Header = () => {
     return (
        <div className="top-header">
            <div className="h-title">
-            <h3>Kokomo</h3>
+                <h3>Kokomo</h3>
            </div>
            <div className="search">
-            <Search />
+                <Search />
            </div>
            <div>
-            <NavBar />
+                <NavBar />
            </div>
-
-
-
        </div> 
     )
-
 }
 
 export default Header;

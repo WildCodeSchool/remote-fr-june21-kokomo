@@ -7,7 +7,7 @@ import './CocktailDetails.css';
 
 const CocktailDetails = () => {
 
-    const [cocktail, setCocktail] = useState([]);
+    const [cocktail, setCocktail] = useState({});
     const { idDrink } = useParams();
     
     useEffect(() => {
@@ -19,7 +19,6 @@ const CocktailDetails = () => {
     const ingredients = Object.entries(cocktail)
                 .filter(ing => ing[0].includes("Ingredient"))
                 .map(i => i[1])
-                console.log(ingredients)
     const measure = Object.entries(cocktail)
                 .filter(mea => mea[0].includes("Measure"))
                 .map(m => m[1])

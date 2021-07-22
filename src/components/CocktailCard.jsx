@@ -4,7 +4,7 @@ import pattern from '../assets/pattern.jpg';
 
 import './CocktailCard.css';
 
-const CocktailCard = ({strDrinkThumb, strDrink, idDrink }) => {
+const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
     return (
         <div className="card-container">
             <figure className="cocktail-card">
@@ -22,5 +22,3 @@ const CocktailCard = ({strDrinkThumb, strDrink, idDrink }) => {
 }
 
 export default CocktailCard;
-
-

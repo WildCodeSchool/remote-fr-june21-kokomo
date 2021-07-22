@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
-import CocktailCard from "./CocktailCard";
+import { useState, useEffect } from 'react';
+import CocktailCard from './CocktailCard';
 import './CocktailList.css';
 
 const CocktailList = () => {
+
 const [cocktails, setCocktails] = useState([]);
 
 useEffect(() => {
@@ -14,14 +15,14 @@ useEffect(() => {
 return (
     <>    
         <h1>Cocktails List</h1>
-        <div className="list-container">   
-            {cocktails.map((cocktail) => (
+            <div className="list-container">   
+             {cocktails.map((cocktail) => (
                 <CocktailCard Key={cocktail.idDrink} {...cocktail} />
-            ))
-            }
-        </div>
+                ))
+             }
+            </div>
     </>
-)
+    )
 };
 
 export default CocktailList;
