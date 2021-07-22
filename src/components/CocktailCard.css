@@ -13,15 +13,17 @@
     width: 90%; 
     height: 50%;
 }
-
-
-
-.title-pattern {
+.grand-background {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.parent-background {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 65px;
-    width: 90%;
+    width: 80%;
     margin-bottom: 10px;
 
     background-image: url("../assets/pattern.jpg");
@@ -29,19 +31,16 @@
     background-size: 100%;
 }
 
-.background-container {
-    display: flex;
-    justify-content: center;
-}
-
-.title-background {
+.child-background {
     width: 100%;
+    padding: 10px;
     background-color: #36685D;
-    box-shadow: 0, 4, 4, 1, rgba(0,0,0,2.5);
-    height: 70%;
+    box-shadow: 0px 4px 3px rgb(41, 51, 41);
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
 }
 
 .navlink {

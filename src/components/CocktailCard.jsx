@@ -11,9 +11,9 @@ const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
                 <NavLink className="navlink" to={`/cocktails/${idDrink}`} alt={strDrink}>
                     <img src={strDrinkThumb} alt={`image of ${strDrink}`} />
                 </NavLink>
-                <figcaption className ="background-container">
-                    <div className="title-pattern">
-                        <div className="title-background">
+                <figcaption className ="grand-background">
+                    <div className="parent-background">
+                        <div className="child-background">
                             <h2>{strDrink}</h2>
                         </div>
                     </div>
