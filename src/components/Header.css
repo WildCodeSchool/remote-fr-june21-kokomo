@@ -1,0 +1,19 @@
+.top-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F39D9E;
+    height: 100px;
+}
+
+.h-title {
+    color: white;
+    font-size: 23px;
+}
+
+input {
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+
+}

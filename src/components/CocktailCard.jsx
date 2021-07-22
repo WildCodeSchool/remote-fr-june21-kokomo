@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import CocktailList from './CocktailList'; 
+import pattern from '../assets/pattern.jpg';
+
 import './CocktailCard.css';
 
-const CocktailCard = ({strDrinkThumb, strDrink, idDrink, strCategory }) => {
+const CocktailCard = ({strDrinkThumb, strDrink, idDrink }) => {
     return (
         <div className="card-container">
             <figure className="cocktail-card">
@@ -11,9 +13,9 @@ const CocktailCard = ({strDrinkThumb, strDrink, idDrink, strCategory }) => {
                 </NavLink>
                 <figcaption>
                     <div className="title-background">
+                        
                         <h2>{strDrink}</h2>
                     </div>
-                    <p>{strCategory}</p>
                 </figcaption>
             </figure> 
         </div>
@@ -21,3 +23,5 @@ const CocktailCard = ({strDrinkThumb, strDrink, idDrink, strCategory }) => {
 }
 
 export default CocktailCard;
+
+

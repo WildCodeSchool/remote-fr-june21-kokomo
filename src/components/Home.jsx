@@ -1,11 +1,13 @@
 import CocktailList from "./CocktailList";
 import Footer from './Footer';
-import NavBar from "./NavBar";
+import Header from "./Header";
+
+import './Home.css';
 
 const Home = () => {
     return (
         <>
-            <NavBar />
+            <Header />
             <CocktailList />
             <Footer />
         </>

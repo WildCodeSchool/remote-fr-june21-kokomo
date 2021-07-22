@@ -2,6 +2,7 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import CocktailList from './components/CocktailList';
 import CocktailDetails from './components/CocktailDetails';
 import Home from './components/Home';
+import Header from "./components/Header";
 
 import './App.css';
 
@@ -14,9 +15,11 @@ const App = () => {
             <Home />
           </Route>
           <Route exact path="/cocktails">
+            <Header />
             <CocktailList />
           </Route>
-          <Route exact path="/cocktails/:id">
+          <Route exact path="/cocktails/:idDrink">
+            <Header />
             <CocktailDetails/>
           </Route>
         </Switch>
