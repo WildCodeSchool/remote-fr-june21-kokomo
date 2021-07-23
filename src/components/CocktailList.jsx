@@ -14,7 +14,6 @@ const CocktailList = () => {
 
     return (
         <>
-            <h1>Cocktails List</h1>
             <div className="list-container">
                 {cocktails.map((cocktail) => (
                     <CocktailCard Key={cocktail.idDrink} {...cocktail} />

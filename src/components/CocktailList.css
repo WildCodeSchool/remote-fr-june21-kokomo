@@ -1,6 +1,7 @@
 .list-container{
+    margin-top: 10%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: #fff;
 }
@@ -9,4 +10,10 @@ h1{
     text-align: center;
     color: rgb(250, 138, 138);
     padding:20px;
+}
+
+@media only screen and (min-width: 688px) {
+    .list-container {
+        margin-top: 4%;
+    }
 }
