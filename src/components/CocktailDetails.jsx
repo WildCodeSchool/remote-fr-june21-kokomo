@@ -24,19 +24,28 @@ const CocktailDetails = () => {
                 .map(m => m[1])
     
     return (
-        <div className="details-container">
-            <img src={cocktail.strDrinkThumb} alt="cocktail"/>
-            <h1 className="cocktail-name">{cocktail.strDrink}</h1>
-            <ul className="ingredients">
-                {ingredients.map((a, b) => a && 
-                <li>
-                    {a} {measure[b]}
-                </li>
-                )}
-            </ul>
-            <p className="recipe"></p>
-            <NavLink to="/cocktails">Return to cocktails list</NavLink>
-        </div> 
+        <div>
+            <div className="details-container">
+                <img src={cocktail.strDrinkThumb} alt="cocktail"/>
+                <div>
+                    <h2 >{cocktail.strDrink}</h2>
+                </div>
+                <div className="white-container">
+                    <ul className="ingredients">
+                        {ingredients.map((a, b) => a && 
+                        <li className="ingredients-list">
+                            {a} {measure[b]}
+                        </li>
+                        )}
+                    </ul>
+                </div>
+                <div className="green-container">
+                    <h3 className="recipe">recipe</h3> 
+                    <p>{cocktail.strInstructions}</p>
+                </div>
+                <NavLink to="/cocktails">Return to cocktails list</NavLink>  
+            </div> 
+        </div>
     )
 }
 

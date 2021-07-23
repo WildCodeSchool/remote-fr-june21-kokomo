@@ -1,7 +1,33 @@
 .cocktail-name {
-    background-color: chartreuse;
+    background-color: #36685D;
 }
 
 .details-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url("../assets/pattern.jpg");
+    background-repeat: repeat;
+    background-size: 10%;
+    width: 100%;
+}
 
+.ingredients-list {
+    font-weight: 700;
+    color: #36685D;
+}
+
+.white-container {
+    background-color: #F6F2F1;
+}
+
+.green-container {
+    background-color: #518A8B;
+    color: #F6F2F1;
+}
+
+@media only screen and (min-width: 688px) {
+    .list-container {
+        margin-top: 4%;
+    }
 }

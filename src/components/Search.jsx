@@ -1,6 +1,5 @@
 const Search = () => {
  
-
     return (
         <div>
             <input
