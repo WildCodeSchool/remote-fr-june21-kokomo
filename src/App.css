@@ -1,0 +1,86 @@
+.white-container {
+    background-color: #F6F2F1;
+}
+
+.green-container {
+    background-color: #518A8B;
+    color: #F6F2F1;
+}
+
+.list-container{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+h1{
+    text-align: center;
+    color: rgb(250, 138, 138);
+    padding:20px;
+}
+
+
+.card-container {
+    margin: 10px;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cocktail-card {
+    background-color: #518A8B;
+    /* height: 520px; */
+    width: 90%; 
+    height: 50%;
+}
+.grand-background {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.parent-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+    width: 80%;
+    margin-bottom: 10px;
+    background-image: url("./assets/pattern.jpg");
+    background-repeat: repeat-x;
+    background-size: 100%;
+}
+
+.child-background {
+    width: 100%;
+    padding: 10px;
+    background-color: #36685D;
+    box-shadow: 0px 4px 3px rgb(41, 51, 41);
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.navlink {
+    display : block;
+}
+
+.pattern {
+    font-size: 20%;
+}
+
+@media only screen and (min-width: 688px) {
+    
+    .card-container {
+        width: 20%;
+    }
+
+    .list-container {
+        margin-top: 4%;
+    }
+}

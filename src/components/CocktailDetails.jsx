@@ -25,7 +25,7 @@ const CocktailDetails = () => {
         const measure = Object.entries(cocktail)
             .filter(mea => mea[0].includes("Measure") && mea[1] !== null)
             .map(m => m[1])
-
+        
         ingredientsName.forEach((name, i) => ingredients.push({
             name: name,
             measure: measure[i]
@@ -35,15 +35,26 @@ const CocktailDetails = () => {
     }
 
     return (
-        <div className="details-container">
-            <img src={cocktail.strDrinkThumb} alt="cocktail"/>
-            <h1 className="cocktail-name">{cocktail.strDrink}</h1>
-            <ul className="ingredients">
-                {getIngredients(cocktail).map((ingredient, i) => (
-                    <li key={i}>{ingredient.name} :{ingredient.measure} </li>
-                ))}
-            </ul>
-            <p className="recipe"></p>
+        <div className="card-container">
+            <div className="cocktail-card">
+                <img src={cocktail.strDrinkThumb} alt="cocktail"/>
+                <div className="grand-background">
+                    <div className="parent-background">
+                        <div className="child-background">
+                            <h2 className="cocktail-name">{cocktail.strDrink}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div className="ingredients">
+                    <ul className="basic">
+                        {getIngredients(cocktail).map((ingredient, i) => (
+                        <li className="ingredients-list" key={i}> {ingredient.measure.toUpperCase()} {ingredient.name} </li>
+                        ))}
+                    </ul>
+                </div>
+                <p className="recipe">{cocktail.strInstructions}</p>
+                
+            </div>
             <NavLink to="/cocktails">Return to cocktails list</NavLink>
         </div> 
     )
