@@ -1,36 +1,46 @@
 .card-container {
     margin: 10px;
-    width: 20%;
+    width: 90%;
     height: 60%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cocktail-card {
     background-color: #518A8B;
-    height: 520px;
-    width: 100%; 
+    /* height: 520px; */
+    width: 90%; 
     height: 50%;
 }
-
-h2 {
-    padding-top: 5px;
-    height: 60%;
-    width: 100%;
-    background-color: #36685D;
-    box-shadow: 0, 4, 4, 0, rgba(0,0,0,2.5);
+.grand-background {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
-
-.title-background {
+.parent-background {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 65px;
-    width: 100%;
+    width: 80%;
+    margin-bottom: 10px;
 
     background-image: url("../assets/pattern.jpg");
     background-repeat: repeat-x;
     background-size: 100%;
+}
+
+.child-background {
+    width: 100%;
+    padding: 10px;
+    background-color: #36685D;
+    box-shadow: 0px 4px 3px rgb(41, 51, 41);
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
 }
 
 .navlink {
@@ -39,4 +49,10 @@ h2 {
 
 .pattern {
     font-size: 20%;
+}
+
+@media only screen and (min-width: 688px) {
+    .card-container {
+        width: 20%;
+    }
 }
