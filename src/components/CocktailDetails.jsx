@@ -35,28 +35,33 @@ const CocktailDetails = () => {
     }
 
     return (
-        <div className="card-container">
-            <div className="cocktail-card">
-                <img src={cocktail.strDrinkThumb} alt="cocktail"/>
-                <div className="grand-background">
-                    <div className="parent-background">
-                        <div className="child-background">
-                            <h2 className="cocktail-name">{cocktail.strDrink}</h2>
+        <section className="details-container">
+            <div className="card-container media-details">
+                <div className="cocktail-card media-details">
+                    <img className="image media-details" src={cocktail.strDrinkThumb} alt="cocktail"/>
+                    <div className="grand-background media-details">
+                        <div className="parent-background media-details">
+                            <div className="child-background media-details">
+                                <h2 className="cocktail-name">{cocktail.strDrink}</h2>
+                            </div>
                         </div>
                     </div>
+                    <div className="ingredients">
+                        <ul className="basic">
+                            {getIngredients(cocktail).map((ingredient, i) => (
+                            <li className="ingredients-list" key={i}> {ingredient.measure.toUpperCase()} {ingredient.name} </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="recipe">
+                        <p>{cocktail.strInstructions}</p>
+                    </div>
                 </div>
-                <div className="ingredients">
-                    <ul className="basic">
-                        {getIngredients(cocktail).map((ingredient, i) => (
-                        <li className="ingredients-list" key={i}> {ingredient.measure.toUpperCase()} {ingredient.name} </li>
-                        ))}
-                    </ul>
-                </div>
-                <p className="recipe">{cocktail.strInstructions}</p>
-                
             </div>
-            <NavLink to="/cocktails">Return to cocktails list</NavLink>
-        </div> 
+                <div>
+                    <NavLink to="/cocktails">Return to cocktails list</NavLink>
+                </div>
+        </section>
     )
 }
 
