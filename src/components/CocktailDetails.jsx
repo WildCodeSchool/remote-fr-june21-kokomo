@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
+import AddButton from './AddButton.jsx';
 
 import './CocktailDetails.css';
 
@@ -15,6 +16,8 @@ const CocktailDetails = () => {
         .then(response => response.json())
         .then(data => setCocktail(data.drinks[0]))
     }, [])
+
+    
 
     const getIngredients = (cocktail) => {
         var ingredients = [];
@@ -47,11 +50,14 @@ const CocktailDetails = () => {
                         </div>
                     </div>
                     <div className="ingredients">
-                        <ul className="basic">
-                            {getIngredients(cocktail).map((ingredient, i) => (
-                            <li className="ingredients-list" key={i}> {ingredient.measure.toUpperCase()} {ingredient.name} </li>
+                        <AddButton />
+                        <div>
+                            <ul className="basic">
+                                {getIngredients(cocktail).map((ingredient, i) => (
+                                <li className="ingredients-list" key={i}> {ingredient.measure.toUpperCase()} {ingredient.name} </li>
                             ))}
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
                     <div className="recipe">
                         <p>{cocktail.strInstructions}</p>
