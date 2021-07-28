@@ -28,55 +28,66 @@
 
 @media only screen and (min-width: 688px) {
     .card-container.media-details {
-        width: 90%;
-        /* Il faudra sûrement mettre margin bottom à 0 quand les commentaires seront ajoutés (mais pas en media query) */
-    }
+    width: 90%;
+    /* Il faudra sûrement mettre margin bottom à 0 quand les commentaires seront ajoutés (mais pas en media query) */
+}
 
-    .details-container {
-        height: 600px;
-        margin-top: 5%;
-    }
+.details-container {
+    height: 800px;
+    margin-top: 5%;
+}
 
-        .cocktail-card.media-details {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            background-image: url("../assets/pattern.jpg");
-            background-repeat: repeat-x repeat-y;
-            background-size: 8%;
-            margin: 0;
-            height: 100%;
-        }
+.cocktail-card.media-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-image: url("../assets/pattern.jpg");
+    background-repeat: repeat-x repeat-y;
+    background-size: 8%;
+    margin: 0;
+    height: 100%;
+}
 
-            .image.media-details {
-                grid-area: 1 / 1 / 4 / 2;
-                height: 100%;
-            }
+.image.media-details {
+    grid-area: 1 / 1 / 4 / 2;
+    height: 100%;
+    width: 100%;
+}
 
-            .grand-background.media-details {
-                grid-area: 1 / 2 / 2 / 4;
-                width: 100%;
-                height: 100%;
-                align-items: flex-start;
-            }
+.grand-background.media-details {
+    grid-area: 1 / 2 / 2 / 4;
+    width: 50%;
+    position: unset;
+    justify-content: flex-start;
+    align-self: start;
+}
 
-                .parent-background.media-details {
-                margin-bottom: 0;
-                background-image: none;
-                }
-                    .child-background.media-details {
-                    
-                    }
+.parent-background.media-details {
+    margin-bottom: 0;
+    background-image: none;
+}
 
-            .ingredients {
-                margin: 0;
-                grid-area: 2 / 2 / 3 / 4;
-            }
-            .recipe {
-                background-color: #518A8B;
-                grid-area: 3 / 2 / 4 / 4;
-            }
-    
+.child-background.media-details {
+    position: unset;
+    align-self: start;
+}
+
+.ingredients {
+    grid-area: 1 / 2 / 3 / 4;
+    margin: 0;
+    width: 100%;
+    height: 60%;
+    align-self: center;
+    font-size: 1.2em;
+}
+
+.recipe {
+    align-self: flex-end;
+    grid-area: 2 / 2 / 4 / 4;
+    background-color: #518A8B;
+    height: 65%;
+}
+
 }

@@ -74,12 +74,12 @@ h1{
 
 @media only screen and (min-width: 688px) {
     
-    .card-container {
-        width: 20%;
-        margin: 1%;
-    }
+.card-container {
+    width: 20%;
+    margin: 1%;
+}
 
-    .list-container {
-        margin-top: 4%;
-    }
+.list-container {
+    margin-top: 4%;
+}
 }
