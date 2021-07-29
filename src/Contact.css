@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+*{
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Source Sans Pro', sans-serif;
+}
+
+form{
+    width: 40%;
+   margin: auto;
+}
+
+.div{
+    max-width: 500px;
+    width: 100;
+}
+
+.title{
+    padding: 5%;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: black;
+    text-align: center;
+}
+
+.question{
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section{
+    display: block;
+}
+
+.question .label{
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1200px) {
+    h1{
+        width: 200%;
+    }
+
+    .title{
+        width: 200%;
+    }
+
+    .question{
+        width: 200%;
+    }
+
+    .input{
+        width: 200%;
+    }
+}
+
