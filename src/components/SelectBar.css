@@ -1,13 +1,5 @@
-.menu-container {
-  background-color: green;
-}
-
-.alcool-select {
-  background-color: blue;
-}
-.ingredient-select {
+.buttons-container {
+  display: flex;
   background-color: red;
-}
-.category-select {
-  background-color: yellow;
+  justify-content: flex-end;
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import SelectBar from "./SelectBar";
 import Search from "./Search";
 import "./Header.css";
