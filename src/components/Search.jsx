@@ -1,5 +1,5 @@
+import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
 const Search = () => {
     const [searchValue, setSearchValue] =  useState('');
@@ -15,6 +15,10 @@ const Search = () => {
         setSearchValue(event.target.value);
     };
 
+    const resetInput = () => {
+        setSearchValue('')
+    };
+
     return (
         <>     
           
@@ -23,16 +27,16 @@ const Search = () => {
                 onChange={handleChange}
                 type="text"
                 placeholder="Search for a cocktail ?"
-                id ="input-search"
-                />
+                id ="inputSearch"
+            />
             <div className="result">
-            <ul>
-                {(searchValue && name) &&
-                name.map ((elem) => (
-                    <li key={elem.idDrink}><Link to={`/cocktails/${elem.idDrink}`}>{elem.strDrink}</Link></li>
+                <ul>
+                    {(searchValue && name) &&
+                    name.map ((elem) => (
+                    <li key={elem.idDrink}><NavLink onClick={resetInput} className="suggest" to={`/cocktails/${elem.idDrink}`}>{elem.strDrink}</NavLink></li>
                     ))}
             
-            </ul>
+                </ul>
             </div>
                   
         
