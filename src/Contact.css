@@ -27,10 +27,9 @@ form{
 }
 
 .question{
-    margin: auto;
     padding: 5px;
-    display: flex;
-    flex-direction: column;
+
+   
 }
 
 .section{
@@ -44,22 +43,40 @@ form{
 
 }
 
-
-@media screen and (min-width: 768px) and (max-width:1200px) {
-    h1{
-        width: 200%;
-    }
-
-    .title{
-        width: 200%;
-    }
-
-    .question{
-        width: 200%;
-    }
-
-    .input{
-        width: 200%;
-    }
+#c_content{
+    width: 100%;
 }
 
+
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map{
+    width: 40%;
+    margin: 3%;
+    padding: 20px;
+    text-align: center;
+    height: 200px;
+    border-radius: 50px;
+background: #e0e0e0;
+box-shadow:  5px 5px 29px #747474,
+             -5px -5px 29px #ffffff;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-input{
+    padding: 1% 3%;
+   
+}
+
+@media screen and (min-width: 788px) {
+    
+}

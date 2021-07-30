@@ -17,11 +17,11 @@ const Contact = () => {
 
 
     return (
-        <div>
-            <form >
+        <div className='contact-container'>
+            <form className='contact-form'>
                 <div className='question'>
                     <label>
-                        <input
+                        <input className='contact-input'
                             type="text"
                             name="firtName"
                             id="firstName"
@@ -33,7 +33,7 @@ const Contact = () => {
                 </div>
                 <div className='question'>
                     <label>
-                        <input
+                        <input className='contact-input'
                             type="text"
                             name="lastName"
                             id="lastName"
@@ -45,7 +45,7 @@ const Contact = () => {
                 </div>
                 <div className='question'>
                     <label>
-                        <input
+                        <input className='contact-input'
                             type="email"
                             name="email"
                             id="email"
@@ -78,7 +78,7 @@ const Contact = () => {
                     </label>
                 </div>
             </form>
-            <div>
+            <div className='map'>
                 {send.map(info => < div > {info}</div>)}</div>
         </div >
     )
