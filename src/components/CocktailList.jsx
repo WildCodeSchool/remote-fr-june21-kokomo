@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import CocktailCard from './CocktailCard';
-import './CocktailList.css';
 
 const CocktailList = () => {
 
