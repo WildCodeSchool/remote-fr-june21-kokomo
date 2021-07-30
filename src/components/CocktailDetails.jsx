@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import AddButton from './AddButton.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 import './CocktailDetails.css';
 
@@ -17,45 +19,39 @@ const CocktailDetails = () => {
         .then(data => setCocktail(data.drinks[0]))
     }, [])
 
+    const ingredients = Object.entries(cocktail)
+                .filter(ing => ing[0].includes("Ingredient"))
+                .map(i => i[1])
+
+    const measure = Object.entries(cocktail)
+                .filter(mea => mea[0].includes("Measure"))
+                .map(m => m[1])
     
-
-    const getIngredients = (cocktail) => {
-        var ingredients = [];
-        const ingredientsName = Object.entries(cocktail)
-            .filter(ing => ing[0].includes("Ingredient") && ing[1] !== null)
-            .map(i => i[1])
-
-        const measure = Object.entries(cocktail)
-            .filter(mea => mea[0].includes("Measure") && mea[1] !== null)
-            .map(m => m[1])
-        
-        ingredientsName.forEach((name, i) => ingredients.push({
-            name: name,
-            measure: measure[i]
-        }));
-
-        return ingredients;
-    }
 
     return (
         <section className="details-container">
             <div className="card-container media-details">
                 <div className="cocktail-card media-details">
+                    <div className="back">
+                        <NavLink to="/cocktails"><FontAwesomeIcon className="back-icon" icon={faPaperPlane} /></NavLink>
+                    </div>
                     <img className="image media-details" src={cocktail.strDrinkThumb} alt="cocktail"/>
-                    <div className="grand-background media-details">
+                <div className="grand-background media-details">
                         <div className="parent-background media-details">
                             <div className="child-background media-details">
                                 <h2 className="cocktail-name">{cocktail.strDrink}</h2>
                             </div>
                         </div>
                     </div>
-                    <div className="ingredients">
-                        <AddButton />
-                        <div>
+                    <div className="parent-ingredients">
+                        <AddButton oz={measure}/>
+                        <div className="child-ingredients">
                             <ul className="basic">
-                                {getIngredients(cocktail).map((ingredient, i) => (
-                                <li className="ingredients-list" key={i}> {ingredient.measure.toUpperCase()} {ingredient.name} </li>
-                            ))}
+                                {ingredients.map((a, b) => a && 
+                                    <li key={idDrink} className="ingredients-list">
+                                        {a} {measure[b]}
+                                    </li>
+                                    )}
                             </ul>
                         </div>
                     </div>
@@ -64,9 +60,7 @@ const CocktailDetails = () => {
                     </div>
                 </div>
             </div>
-                <div>
-                    <NavLink to="/cocktails">Return to cocktails list</NavLink>
-                </div>
+                
         </section>
     )
 }
