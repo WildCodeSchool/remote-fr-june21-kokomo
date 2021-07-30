@@ -1,4 +1,8 @@
 import { NavLink } from 'react-router-dom';
+import CocktailList from './CocktailList';
+import pattern from '../assets/pattern.jpg';
+
+import './CocktailCard.css';
 
 const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
     return (
@@ -7,14 +11,14 @@ const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
                 <NavLink className="navlink" to={`/cocktails/${idDrink}`} alt={strDrink}>
                     <img className="image" src={strDrinkThumb} alt={`image of ${strDrink}`} />
                 </NavLink>
-                <figcaption className ="grand-background media-card">
+                <figcaption className="grand-background media-card">
                     <div className="parent-background media-card">
                         <div className="child-background media-card">
                             <h2 className="name">{strDrink}</h2>
                         </div>
                     </div>
                 </figcaption>
-            </figure> 
+            </figure>
         </div>
     );
 }
