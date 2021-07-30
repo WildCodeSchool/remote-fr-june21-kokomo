@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, NavLink, Route, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import SelectBar from "./SelectBar";
 import Search from "./Search";
