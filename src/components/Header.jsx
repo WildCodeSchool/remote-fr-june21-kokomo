@@ -1,18 +1,22 @@
-import { useEffect } from "react";
+import { BrowserRouter, Link, NavLink, Route, Switch } from "react-router-dom";
+
 import SelectBar from "./SelectBar";
 import Search from "./Search";
+
 import "./Header.css";
 
 const Header = () => {
   return (
     <div className='top-header'>
       <div className='h-title'>
-        <h3>Kokomo</h3>
+        <NavLink className='linkKokomo' to='/cocktails'>
+          <h3>Kokomo</h3>
+        </NavLink>
       </div>
       <div className='search'>
         <Search />
       </div>
-      <div className='button-bar'>
+      <div>
         <SelectBar />
       </div>
     </div>
