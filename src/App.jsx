@@ -3,6 +3,7 @@ import CocktailList from './components/CocktailList';
 import CocktailDetails from './components/CocktailDetails';
 import Home from './components/Home';
 import Header from './components/Header';
+import Contact from './components/Contact';
 
 import './App.css';
 
@@ -12,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/"> 
+          <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/cocktails">
@@ -21,9 +22,13 @@ const App = () => {
           <Route exact path="/cocktails/:idDrink">
             <CocktailDetails />
           </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
   );
 }
+
 export default App;
