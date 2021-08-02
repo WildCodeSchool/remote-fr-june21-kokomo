@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import './Header.css'
+
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
   const [name, setName] = useState([]);
@@ -22,16 +24,16 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div className='parents-search'>
       <input
         value={searchValue}
         onChange={handleChange}
         type='text'
         placeholder='Search for a cocktail ?'
-        id='inputSearch'
+        id='input-search'
       />
       <div className='result'>
-        <ul>
+        <ul className='suggest-ul'>
           {searchValue &&
             name &&
             name.map((elem) => (
@@ -47,7 +49,7 @@ const Search = () => {
             ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
