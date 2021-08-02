@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
 
-
 const AddButton = (oz) => {
 
     const [counter, setCounter] = useState(1);
