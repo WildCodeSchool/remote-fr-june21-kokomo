@@ -1,55 +1,57 @@
 .top-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #F39D9E;
-    height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f39d9e;
+  height: 100px;
 }
 
 .h-title {
-    color: white;
-    font-size: 23px;
+  color: white;
+  font-size: 23px;
 }
 
+.button-bar {
+  background-color: violet;
+}
 #inputSearch {
-    list-style-type: none;
-    width: 550px;
-    height: 50px;
-    position: sticky;
-    top: 25px;
-    left: 0;
-    right: 0;
-    bottom: 0;    
-    border-radius: 200px;
-    text-align: center;
-    outline: none;
-    border-color: #EF957A;
+  width: 550px;
+  height: 50px;
+  position: sticky;
+  top: 25px;
+  border-radius: 200px;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: -1px 5px 3px -3px rgba(64, 37, 37, 0.71) inset;
+  font-family: "Roboto", sans-serif;
+  color: #918c89;
 }
 
 ul {
-    border-radius: 30px;
-    list-style-type: none;
-    background-color: rgb(250, 250, 250);
+  border-radius: 30px;
+  list-style-type: none;
+  background-color: rgb(250, 250, 250);
 }
 
-.result{
-    text-align: center;
-    width: 100%;
-    height: 2px;
-    position: sticky;
-    top: 50px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;    
+.result {
+  text-align: center;
+  width: 100%;
+  height: 2px;
+  position: sticky;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
 }
 
 .suggest {
-    text-decoration: none;
-    color : #F39D9E;
+  text-decoration: none;
+  color: #f39d9e;
 }
 
 .linkKokomo {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }

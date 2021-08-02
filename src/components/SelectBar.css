@@ -1,0 +1,5 @@
+.buttons-container {
+  display: flex;
+  background-color: red;
+  justify-content: flex-end;
+}
