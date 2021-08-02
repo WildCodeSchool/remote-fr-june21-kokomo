@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SelectBar.css";
 
-const SelectButton = ({ title, handleChange, values }) => {
+const SelectButton = ({ title, handleChange, name, values }) => {
   const [showRadios, setShowRadios] = useState(false);
   const handleShowRadiosOnlyClick = () => {
     setShowRadios(!showRadios);
@@ -19,7 +19,7 @@ const SelectButton = ({ title, handleChange, values }) => {
               <input
                 type='radio'
                 value={element.value}
-                // name='radioButton'
+                name={name}
                 className='form-check-input'
                 onChange={handleChange}
               />
