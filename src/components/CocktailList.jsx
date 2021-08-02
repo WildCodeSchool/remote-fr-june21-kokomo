@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
+import SelectBar from "./SelectBar";
 
 const CocktailList = () => {
   const [cocktails, setCocktails] = useState([]);
+  // const [filterCocktail, setFilterCocktail] = useState([]);
+
+  function handleChange(result) {
+    setCocktails(result);
+  }
 
   useEffect(() => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`)
@@ -12,6 +18,9 @@ const CocktailList = () => {
 
   return (
     <>
+      <div>
+        <SelectBar onResultChange={handleChange} />
+      </div>
       <div className='list-container'>
         {cocktails.map((cocktail) => (
           <CocktailCard key={cocktail.idDrink} {...cocktail} />

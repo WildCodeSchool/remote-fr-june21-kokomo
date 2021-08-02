@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-import SelectBar from "./SelectBar";
 import Search from "./Search";
 
 import "./Header.css";
@@ -15,9 +14,6 @@ const Header = () => {
       </div>
       <div className='search'>
         <Search />
-      </div>
-      <div>
-        <SelectBar />
       </div>
     </div>
   );
