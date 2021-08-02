@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
   return (
