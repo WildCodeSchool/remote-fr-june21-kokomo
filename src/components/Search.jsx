@@ -12,7 +12,7 @@ const Search = () => {
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchValue}`
     )
       .then((response) => response.json())
-      .then((data) => setName(data.drinks));
+      .then((data) => setName(data.drinks))
   }, [searchValue]);
 
   const handleChange = (event) => {
