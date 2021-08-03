@@ -20,7 +20,7 @@ const CocktailDetails = () => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
         .then(response => response.json())
         .then(data => setCocktail(data.drinks[0]))
-    }, [<CocktailDetails />])
+    }, [])
 
     const isMobile = useMediaQuery({
         query: '(max-width: 688px)'
