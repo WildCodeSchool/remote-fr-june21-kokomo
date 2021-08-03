@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
+import Search from "./Search";
 
 const CocktailList = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -12,6 +13,7 @@ const CocktailList = () => {
 
   return (
     <>
+      <Search />
       <div className='list-container'>
         {cocktails.map((cocktail) => (
           <CocktailCard key={cocktail.idDrink} {...cocktail} />

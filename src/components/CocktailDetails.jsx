@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 import './CocktailDetails.css';
+import Search from "./Search.jsx";
 
 const CocktailDetails = () => {
 
@@ -30,6 +31,8 @@ const CocktailDetails = () => {
     
 
     return (
+        <>
+        <Search />
         <section className="details-container">
             <div className="card-container media-details">
                 <div className="cocktail-card media-details">
@@ -63,6 +66,7 @@ const CocktailDetails = () => {
             </div>
                 
         </section>
+        </>
     )
 }
 

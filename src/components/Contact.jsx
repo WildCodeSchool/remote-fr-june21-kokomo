@@ -18,21 +18,22 @@ const Contact = () => {
 
     return (
         <div className='contact-container'>
+          <h3 className="contact-title">Contactez-nous !</h3>
             <form className='contact-form'>
-                <div className='question'>
-                    <label>
-                        <input className='contact-input'
+                <div className='question '>
+                    <label><h4>Firstname :</h4>
+                        <input className='contact-input contact-firstname'
                             type="text"
                             name="firtName"
                             id="firstName"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
-                            placeholder="UGOLINI"
+                            placeholder="Ugolini"
                         />
                     </label>
                 </div>
                 <div className='question'>
-                    <label>
+                    <label><h4>Lastname :</h4>
                         <input className='contact-input'
                             type="text"
                             name="lastName"
@@ -44,21 +45,21 @@ const Contact = () => {
                     </label>
                 </div>
                 <div className='question'>
-                    <label>
+                    <label> <h4>Email :</h4>
                         <input className='contact-input'
                             type="email"
                             name="email"
                             id="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="ugolini.maria@gmail.com"
+                            placeholder="ugolini.maria@mail.com"
                         />
                     </label>
                 </div>
 
                 <div className='question'>
-                    <label htmlFor="c_content">Message</label>
-                    <textarea
+                    <label htmlFor="c_content"><h4>Message :</h4></label>
+                    <textarea className="contact-message"
                         type="Message"
                         name="c_content"
                         id="c_content"
@@ -67,9 +68,9 @@ const Contact = () => {
                         rows="7"></textarea>
                 </div>
 
-                <div className='question'>
+                <div className='question button-center'>
                     <label>
-                        <input
+                        <input className="submit-button"
                             type="submit"
                             name="submit"
                             value="Submit"
