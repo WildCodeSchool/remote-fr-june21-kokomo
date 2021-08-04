@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
+import './CocktailCard.css';
+
 const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
   return (
     <div className='card-container media-card'>
