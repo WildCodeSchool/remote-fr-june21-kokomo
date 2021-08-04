@@ -8,7 +8,6 @@ import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-
 import './CocktailDetails.css';
 
 const CocktailDetails = () => {
@@ -59,9 +58,9 @@ const CocktailDetails = () => {
                             </div>
                         </div>
                     </div>
-                    {isMobile && <CoeurDeRockeur />}
+                    {/* {isMobile && <CoeurDeRockeur />} */}
                     <div className="parent-ingredients">
-                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} />}
+                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} />}
                         <AddButton desktop={isDesktop} />
                         <div className="child-ingredients">
                             <ul className="basic">
