@@ -10,6 +10,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 
 import './CocktailDetails.css';
+import Search from "./Search.jsx";
 
 const CocktailDetails = () => {
 
@@ -47,6 +48,8 @@ const CocktailDetails = () => {
     
 
     return (
+        <>
+        <Search />
         <section className="details-container">
             <div className="card-container media-details">
                 <Link to="/cocktails" className="link"><FontAwesomeIcon className="back" icon={ faChevronLeft } size={isDesktop ? "2x" : "lg"}/></Link>
@@ -77,6 +80,7 @@ const CocktailDetails = () => {
                 </div>
             </div>    
         </section>
+        </>
     )
 }
 
