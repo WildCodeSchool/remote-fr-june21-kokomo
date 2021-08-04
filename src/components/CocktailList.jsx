@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CocktailCard from "./CocktailCard";
 import SelectBar from "./SelectBar";
+import Search from "./Search";
 
 const CocktailList = () => {
   const [cocktails, setCocktails] = useState([]);
@@ -21,6 +22,7 @@ const CocktailList = () => {
       <div>
         <SelectBar onResultChange={handleChange} />
       </div>
+      <Search />
       <div className='list-container'>
         {cocktails.map((cocktail) => (
           <CocktailCard key={cocktail.idDrink} {...cocktail} />

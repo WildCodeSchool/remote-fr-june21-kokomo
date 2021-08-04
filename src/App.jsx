@@ -3,8 +3,8 @@ import CocktailList from "./components/CocktailList";
 import CocktailDetails from "./components/CocktailDetails";
 import Home from "./components/Home";
 import Header from "./components/Header";
-import Search from "./components/Search";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -13,7 +13,6 @@ const App = () => {
     <div className='app'>
       <BrowserRouter>
         <Header />
-        <Search />
         <Switch>
           <Route exact path='/'>
             <Home />
@@ -28,6 +27,7 @@ const App = () => {
             <Contact />
           </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
