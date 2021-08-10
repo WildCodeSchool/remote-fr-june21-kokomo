@@ -31,7 +31,7 @@ const CocktailDetails = () => {
     })
 
     const getIngredients = (cocktail) => {
-        var ingredients = [];
+        let ingredients = [];
         const ingredientsName = Object.entries(cocktail)
             .filter(ing => ing[0].includes("Ingredient") && ing[1] !== null)
             .map(i => i[1])
