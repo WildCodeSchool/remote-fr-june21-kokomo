@@ -36,7 +36,6 @@ const CoeurDeRockeur = (props) => {
     
     };
 
-
     return (
         <div className="heart-icon">
             <Snackbar open={state.open} autoHideDuration={5000} onClose={handleClose} TransitionComponent={state.Transition}>
