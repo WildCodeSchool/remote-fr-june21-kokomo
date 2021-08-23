@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import './Header.css'
+import CocktailDetails from "./CocktailDetails";
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -37,7 +38,7 @@ const Search = () => {
           {searchValue &&
             name &&
             name.map((elem) => (
-              <li key={elem.idDrink}>
+              <li className='suggest-li' key={elem.idDrink}>
                 <NavLink
                   onClick={resetInput}
                   className='suggest'
