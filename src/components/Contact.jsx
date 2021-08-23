@@ -80,7 +80,9 @@ const Contact = () => {
                 </div>
             </form>
             <div className='map'>
-                {send.map(info => < div > {info}</div>)}</div>
+                {send.map(info => < div > {info}</div>)}
+            </div>
+            
         </div >
     )
 }
