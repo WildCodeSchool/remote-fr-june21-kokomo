@@ -20,7 +20,7 @@ const CocktailDetails = () => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
         .then(response => response.json())
         .then(data => setCocktail(data.drinks[0]))
-    }, [])
+    }, [<Search />])
 
     const isMobile = useMediaQuery({
         query: '(max-width: 688px)'
@@ -31,7 +31,7 @@ const CocktailDetails = () => {
     })
 
     const getIngredients = (cocktail) => {
-        var ingredients = [];
+        let ingredients = [];
         const ingredientsName = Object.entries(cocktail)
             .filter(ing => ing[0].includes("Ingredient") && ing[1] !== null)
             .map(i => i[1])
@@ -61,7 +61,7 @@ const CocktailDetails = () => {
                             </div>
                         </div>
                     </div>
-                    {/* {isMobile && <CoeurDeRockeur />} */}
+                    {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink}/>}
                     <div className="parent-ingredients">
                         {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} />}
                         <AddButton desktop={isDesktop} />

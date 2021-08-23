@@ -22,9 +22,6 @@
   
 }
 
-.button-bar {
-  background-color: violet;
-}
 #input-search {
   display: flex;
   justify-content: center;
@@ -55,8 +52,17 @@
 }
 
 .suggest {
+  font-family: "lato", sans-serif;
   text-decoration: none;
   color: #f39d9e;
+}
+
+.suggest-li {
+  padding: 5px 0px;
+}
+
+.suggest-li a:hover {
+  color: #47af98;
 }
 
 .parents-search {

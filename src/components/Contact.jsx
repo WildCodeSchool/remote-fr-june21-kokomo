@@ -84,6 +84,21 @@ const Contact = () => {
           ></textarea>
         </div>
 
+        <div className='question'>
+          <label htmlFor='c_content'>
+            <h4>Message :</h4>
+          </label>
+          <textarea
+            className='contact-message'
+            type='Message'
+            name='c_content'
+            id='c_content'
+            onChange={(e) => setMessage(e.target.value)}
+            cols='35'
+            rows='7'
+          ></textarea>
+        </div>
+
         <div className='question button-center'>
           <label>
             <input

@@ -9,14 +9,12 @@
 
 .cocktail-card {
     background-color: #518A8B;
-    /* height: 520px; */
     width: 90%; 
     height: 50%;
 }
 .grand-background {
     display: flex;
     justify-content: center;
-    position: relative;
 }
 .parent-background {
     display: flex;
@@ -25,7 +23,6 @@
     height: 65px;
     width: 80%;
     margin-bottom: 10px;
-
     background-image: url("../assets/pattern.jpg");
     background-repeat: repeat-x;
     background-size: 100%;
@@ -34,13 +31,11 @@
 .child-background {
     width: 100%;
     padding: 10px;
-    background-color: #36685D;
-    box-shadow: 0px 4px 3px rgb(41, 51, 41);
+    background-color: #36685d;
     height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
 }
 
 .navlink {
