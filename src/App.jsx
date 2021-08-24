@@ -5,12 +5,14 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Age from "./components/Age";
 
 import "./App.css";
 
 const App = () => {
   return (
     <div className='app'>
+      <Age />
       <BrowserRouter>
         <Header />
         <Switch>
