@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SelectBar.css";
 
-const SelectButton = ({ title, handleChange, name, values }) => {
+const SelectButton = ({ title, handleChange, handleClick, name, values }) => {
   const [showRadios, setShowRadios] = useState(false);
   const handleShowRadiosOnlyClick = () => {
     setShowRadios(!showRadios);
@@ -22,6 +22,7 @@ const SelectButton = ({ title, handleChange, name, values }) => {
                 name={name}
                 className='form-check-input'
                 onChange={handleChange}
+                onClick={handleClick}
               />
               <label>{element.name}</label>
             </div>

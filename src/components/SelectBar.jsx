@@ -63,19 +63,37 @@ const SelectBar = ({ onResultChange }) => {
     recupData();
   }, [selectedValue]);
 
+  // button nav, if selected different from slected now > hide
+  const [show, setShow] = useState(false);
+  const onClick = () => setShow(true);
+
+  //   const handleShow = () => {
+  //   setShow({
+  //       isActive: true
+  //   })
+  // }
+  //   const handleHide = () =>{
+  //   setShow({
+  //       isActive: false
+  //   })
+  // }
+
   return (
     <>
       <div className='buttons-container'>
         <SelectButton
           title='Ingredient'
           name='ingredientButton'
+          handleClick={onClick}
           selectedValue={selectedValue}
           values={ingredientElements}
           handleChange={handleChange}
         />
+        {/* {show ? <SelectButton /> : null} */}
         <SelectButton
           title='Category'
           name='categoryButton'
+          handleClick={onClick}
           selectedValue={selectedValue}
           values={categoryElements}
           handleChange={handleChange}
@@ -83,6 +101,7 @@ const SelectBar = ({ onResultChange }) => {
         <SelectButton
           title='Alcoholic'
           name='alcoholicButton'
+          handleClick={onClick}
           selectedValue={selectedValue}
           values={alcoholicElements}
           handleChange={handleChange}
