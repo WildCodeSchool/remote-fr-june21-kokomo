@@ -1,17 +1,12 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
-import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleUp, faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
 
-
-const AddButton = (oz) => {
+const AddButton = (props) => {
 
     const [counter, setCounter] = useState(1);
-    function increment() {
+    let increment = () =>
         setCounter(counter + 1);
-        oz.oz.forEach(e => e ? (e * 2) : null)
-        console.log(oz)
-    } 
     let decrement = () => setCounter(counter - 1);
     if (counter <= 1) {
        decrement = () => setCounter(1); 
@@ -19,9 +14,9 @@ const AddButton = (oz) => {
 
         return (
             <div className="add">
-                <FontAwesomeIcon className="arrow" onClick={increment} icon={faArrowCircleUp} />
-                <p>{counter}p</p>
-                <FontAwesomeIcon className="arrow" onClick={decrement} icon={faArrowCircleDown} />
+                <FontAwesomeIcon className="arrow" onClick={increment} icon={faArrowCircleUp} size={props.desktop ? "2x" : "1x"} />
+                <p className="counter">{counter}p</p>
+                <FontAwesomeIcon className="arrow" onClick={decrement} icon={faArrowCircleDown} size={props.desktop ? "2x" : "1x"} />
             </div>
         )
 

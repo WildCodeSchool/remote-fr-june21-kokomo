@@ -23,63 +23,81 @@ h1{
 
 
 .card-container {
+    display: flex;
+    justify-content: center;
     width: 90%;
     height: 60%;
     margin: 4%;
-    display: flex;
-    justify-content: center;
+    box-shadow: -1px 5px 3px -3px rgba(64, 37, 37, 0.4);
 }
 
 .cocktail-card {
-    background-color: #518A8B;
+    display: flex;
+    flex-direction: column;
+    /* background: rgb(154,194,186); */
+    background-image: linear-gradient(#9ac2ba,#9ac2ba, #36685d);
     width: 100%; 
     height: 50%;
 }
+
+  
+@keyframes cocktail-card {
+    0% {
+      background: #9ac2ba;
+    }
+    100% {
+      background: #36685d;
+    }
+  }
 .grand-background {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
+
 .parent-background {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 65px;
     width: 80%;
-    margin-bottom: 10px;
+    margin: 10px;
     background-image: url("./assets/pattern.jpg");
     background-repeat: repeat-x;
     background-size: 100%;
 }
 
 .child-background {
-    width: 100%;
-    background-color: #36685D;
-    box-shadow: 0px 4px 3px rgb(41, 51, 41);
-    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    width: 100%;
+    background-color: #f6f2f1;
+    height: 80%;
 }
 
-.navlink {
-    display : block;
-}
-
-.pattern {
-    font-size: 20%;
+.name {
+    color: #518A8B;
+    font-style: uppercase;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 
 @media only screen and (min-width: 688px) {
     
-.card-container {
-    width: 20%;
-    margin: 1%;
-}
+    .card-container {
+        width: 20%;
+        margin: 1%;
+    }
 
-.list-container {
-    margin-top: 4%;
-}
+    .list-container {
+        margin-top: 4%;
+    }
+
+    .cocktail-card:hover {
+        animation: cocktail-card 2s linear infinite alternate both;
+    }
+
 }

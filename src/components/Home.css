@@ -1,18 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;500;700&display=swap");
 
-h1, h2, h3, li {
-    font-family: 'Roboto', sans-serif;
+h1,
+h2,
+h3,
+h4,
+li 
+input,
+textarea,
+label,
+button {
+  font-family: "Roboto", sans-serif;
 }
 
 h2 {
-    font-size: 0.8em;
-    font-weight: 700;
-    font-family: Roboto;
-    text-transform: uppercase;
-    text-align: center;
-    color: #f6f2f1;
+  font-size: 0.8em;
+  font-weight: 700;
+  font-family: Roboto;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f6f2f1;
 }
 
 p {
-    font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
