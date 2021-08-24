@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import CocktailList from './CocktailList';
 import pattern from '../assets/pattern.jpg';
 
-import './CocktailCard.css';
+// import './CocktailCard.css';
 
 const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
     return (
