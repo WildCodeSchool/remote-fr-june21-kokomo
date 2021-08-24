@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import { useDetectOutsideClick } from "./useDetectOutsideClick";
 import "./SelectBar.css";
 
 const SelectButton = ({ title, handleChange, handleClick, name, values }) => {
-  const [showRadios, setShowRadios] = useState(false);
+  const showElement = useRef();
+  const [showRadios, setShowRadios] = useDetectOutsideClick(showElement, false);
   const handleShowRadiosOnlyClick = () => {
     setShowRadios(!showRadios);
   };
 
   return (
-    <>
+    <div ref={showElement}>
       <button onClick={handleShowRadiosOnlyClick}>{title}</button>
 
       <div className='radioButtons'>
@@ -28,7 +30,7 @@ const SelectButton = ({ title, handleChange, handleClick, name, values }) => {
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
