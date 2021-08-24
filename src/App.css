@@ -40,36 +40,6 @@ h1{
     height: 50%;
 }
 
-.modal {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.modal-text {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.5em;
-    padding: 20px;
-}
-
-.capiche {
-    color: white;
-    margin: 4px;
-    border: none;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    padding: 4px 8px;
-    background-color: transparent;
-}
-
-.capiche:hover {
-    color: blue;
-}
-
   
 @keyframes cocktail-card {
     0% {
