@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 import "./SelectBar.css";
 
-const SelectButton = ({ title, handleChange, name, values, onClick }) => {
+const SelectButton = ({ title, handleChange, name, values }) => {
   const showElement = useRef();
   const [showRadios, setShowRadios] = useDetectOutsideClick(showElement, false);
   const handleShowRadiosOnlyClick = () => {
