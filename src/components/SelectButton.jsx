@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 import "./SelectBar.css";
 
-const SelectButton = ({ title, handleChange, handleClick, name, values }) => {
+const SelectButton = ({ title, handleChange, name, values, onClick }) => {
   const showElement = useRef();
   const [showRadios, setShowRadios] = useDetectOutsideClick(showElement, false);
   const handleShowRadiosOnlyClick = () => {
@@ -10,21 +10,22 @@ const SelectButton = ({ title, handleChange, handleClick, name, values }) => {
   };
 
   return (
-    <div ref={showElement}>
-      <button onClick={handleShowRadiosOnlyClick}>{title}</button>
+    <div className='group-buttons' ref={showElement}>
+      <button className='primary-button' onClick={handleShowRadiosOnlyClick}>
+        <span>{title}</span>
+      </button>
 
-      <div className='radioButtons'>
+      <div className='radio-buttons'>
         {values
           .filter((value) => showRadios)
           .map((element, index) => (
-            <div key={index}>
+            <div className='radio-element' key={index}>
               <input
                 type='radio'
                 value={element.value}
                 name={name}
-                className='form-check-input'
+                className='radio-selection'
                 onChange={handleChange}
-                onClick={handleClick}
               />
               <label>{element.name}</label>
             </div>

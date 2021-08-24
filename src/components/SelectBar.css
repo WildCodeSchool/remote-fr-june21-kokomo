@@ -1,10 +1,106 @@
 .buttons-container {
-  display: flex;
-  background-color: #f6f2f1;
-  justify-content: flex-end;
-  box-shadow: 0px 2px 4px 0px #2d353540;
-  height: 50px;
+  display: none;
 }
-.radioButtons {
-  background-color: blue;
+
+@media screen and (min-width: 788px) {
+  .buttons-container {
+    display: flex;
+    background-color: #f6f2f1;
+    justify-content: flex-end;
+    box-shadow: 0px 2px 4px 0px #2d353540;
+    height: 50px;
+  }
+  .radioButtons {
+    background-color: #f6f2f1;
+    color: #36685d;
+  }
+
+  .group-buttons {
+    height: 100%;
+  }
+
+  .primary-button {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 20px;
+    color: salmon;
+    padding: 15px 50px;
+    position: relative;
+    height: 100%;
+  }
+
+  .primary-button:focus {
+    background-color: #36685d;
+  }
+  .primary-button:before {
+    transition: all 0.3s cubic-bezier(0.9, 0, 0.2, 0);
+    content: "";
+    width: 1%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .primary-button span {
+    mix-blend-mode: luminosity;
+  }
+
+  .primary-button:hover:before {
+    background: #36685d;
+    width: 100%;
+  }
+
+  .radio-buttons {
+    padding-left: 5%;
+    background-color: #f39d9e;
+    grid-template-columns: min-content auto;
+    grid-gap: 0.5em;
+    z-index: 0;
+  }
+
+  /* .scale-up-ver-top {
+    animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  @-webkit-keyframes scale-up-ver-top {
+    0% {
+      transform: scaleY(0.4);
+      transform-origin: 100% 0%;
+    }
+    100% {
+      transform: scaleY(1);
+      transform-origin: 100% 0%;
+    }
+  }
+  @keyframes scale-up-ver-top {
+    0% {
+      transform: scaleY(0.4);
+      transform-origin: 100% 0%;
+    }
+    100% {
+      transform: scaleY(1);
+      transform-origin: 100% 0%;
+    }
+  } */
+
+  .radio-selection {
+    background-color: #f39d9e;
+    color: white;
+  }
+  .radio-selection:checked {
+    background-color: #f39d9e;
+    color: red;
+  }
+  .radio-element {
+    background-color: #f39d9e;
+    align-items: center;
+    color: white;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 0.5em;
+  }
 }
