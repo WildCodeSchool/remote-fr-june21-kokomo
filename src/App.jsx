@@ -12,7 +12,7 @@ import './App.css';
 const App = () => {
   return (
     <div className="app">
-      <Age />
+      {/* <Age /> */}
         <BrowserRouter>
           <Header />
           <Switch>

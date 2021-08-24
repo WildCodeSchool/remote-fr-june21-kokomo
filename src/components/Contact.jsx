@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Alert } from '@material-ui/lab';
+import { Snackbar } from '@material-ui/core';
 
 import './Contact.css';
 
@@ -7,18 +9,23 @@ const Contact = () => {
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
-    const [send, setSend] = useState([])
+    const [open, setOpen] = useState(false)
 
-    const validateForm = (e) => {
+    const handleOpen = (e) => {
         e.preventDefault()
-        const result = [" Le message a bien été envoyé avec les infos :", firstName, lastName, email, message]
-        setSend(result)
+        setOpen(true)
     }
 
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpen(false)
+    }
 
     return (
         <div className='contact-container'>
-          <h3 className="contact-title">Contactez-nous !</h3>
+            <h3 className="contact-title">Contactez-nous !</h3>
             <form className='contact-form'>
                 <div className='question '>
                     <label><h4>Firstname :</h4>
@@ -58,7 +65,7 @@ const Contact = () => {
                 </div>
 
                 <div className='question'>
-                    <label htmlFor="c_content"><h4>Message :</h4></label>
+                    <label><h4>Message :</h4></label>
                     <textarea className="contact-message"
                         type="Message"
                         name="c_content"
@@ -74,15 +81,17 @@ const Contact = () => {
                             type="submit"
                             name="submit"
                             value="Submit"
-                            onClick={(e) => validateForm(e)}
+                            onClick={handleOpen}
                         />
                     </label>
                 </div>
             </form>
-            <div className='map'>
-                {send.map(info => < div > {info}</div>)}
-            </div>
             
+            <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success">
+                    Thank you for your feedback {lastName} {firstName}
+                </Alert>
+            </Snackbar>
         </div >
     )
 }
