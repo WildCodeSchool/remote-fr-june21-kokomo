@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Age from './components/Age';
-
+import Favorites from './components/Favorites';
 import './App.css';
 
 const App = () => {
@@ -27,6 +27,9 @@ const App = () => {
             </Route>
             <Route exact path="/contact">
               <Contact />
+            </Route>
+            <Route exact path ='/favorites'>
+              <Favorites />
             </Route>
           </Switch>
           <Footer />

@@ -3,21 +3,22 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    height: 10%;
     margin-top: 10px;
-
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    background-color: #74938d;
 }
 
 .logo-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 30%;
-    
+    justify-content: space-evenly;
+    width: 40%;
 }
 
 .footer-logo {
-    width: 25%;
-    padding: 2px;
+    width: 20%;
 }
 
 .footer-link {
@@ -29,6 +30,36 @@
 .footer-link a:hover {
     color: #47af98;
 }
+
+.footer-heart {
+    color: red;
+}
+
+.footer-heart:hover {
+    animation: heartbeat 1s 1s infinite ease;
+}
+
+@keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    
+    35% {
+      transform: scale(1.3);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+    
+    65% {
+      transform: scale(1.2);
+    }
+    
+    80% {
+      transform: scale(1); 
+    }
+  }
 
 @media screen and (min-width: 788px) {
     .footer-main {
@@ -52,3 +83,29 @@
         width: 12%;
     }
 }
+
+.footer-link {
+    font-size: 1.8em;
+}
+
+@keyframes heartbeat {
+    0% {
+      transform: scale(1.4);
+    }
+    
+    35% {
+      transform: scale(1.8);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+    
+    65% {
+      transform: scale(1.4);
+    }
+    
+    80% {
+      transform: scale(1); 
+    }
+  }
