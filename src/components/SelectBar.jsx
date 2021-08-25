@@ -64,7 +64,7 @@ const SelectBar = ({ onResultChange }) => {
   }, [selectedValue]);
 
   return (
-    <>
+    <div className='container-full-height'>
       <div className='buttons-container'>
         <SelectButton
           title='Ingredient'
@@ -88,7 +88,7 @@ const SelectBar = ({ onResultChange }) => {
           handleChange={handleChange}
         />
       </div>
-    </>
+    </div>
   );
 };
 

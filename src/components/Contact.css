@@ -91,7 +91,7 @@ h4 {
   font-weight: 400;
 }
 
-@media screen and (min-width: 788px) {
+@media screen and (min-width: 688px) {
   .contact-form {
     width: 50%;
     margin-bottom: 20px;
