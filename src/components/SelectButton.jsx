@@ -17,7 +17,6 @@ const SelectButton = ({ title, handleChange, name, values }) => {
 
   const handleClose = (event) => {
     setAnchorEl(null);
-    console.log(event.currentTarget.dataset);
     const { value } = event.currentTarget.dataset;
     handleChange(value);
   };
