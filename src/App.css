@@ -33,7 +33,6 @@ h1 {
 .cocktail-card {
   display: flex;
   flex-direction: column;
-  /* background: rgb(154,194,186); */
   background-image: linear-gradient(#9ac2ba, #9ac2ba, #36685d);
   width: 100%;
   height: 50%;
@@ -47,6 +46,7 @@ h1 {
     background: #36685d;
   }
 }
+
 .grand-background {
   display: flex;
   justify-content: center;

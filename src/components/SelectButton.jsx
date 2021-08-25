@@ -1,36 +1,56 @@
 import React, { useRef } from "react";
-import { useDetectOutsideClick } from "./useDetectOutsideClick";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Fade from "@material-ui/core/Fade";
 import "./SelectBar.css";
 
 const SelectButton = ({ title, handleChange, name, values }) => {
   const showElement = useRef();
-  const [showRadios, setShowRadios] = useDetectOutsideClick(showElement, false);
-  const handleShowRadiosOnlyClick = () => {
-    setShowRadios(!showRadios);
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = (event) => {
+    setAnchorEl(null);
+    console.log(event.currentTarget.dataset);
+    const { value } = event.currentTarget.dataset;
+    handleChange(value);
   };
 
   return (
     <div className='group-buttons' ref={showElement}>
-      <button className='primary-button' onClick={handleShowRadiosOnlyClick}>
-        <span>{title}</span>
-      </button>
+      <Button
+        aria-controls='fade-menu'
+        aria-haspopup='true'
+        onClick={handleClick}
+      >
+        {title}
+      </Button>
 
-      <div className='radio-buttons'>
-        {values
-          .filter((value) => showRadios)
-          .map((element, index) => (
-            <div className='radio-element' key={index}>
-              <input
-                type='radio'
-                value={element.value}
-                name={name}
-                className='radio-selection'
-                onChange={handleChange}
-              />
-              <label>{element.name}</label>
-            </div>
-          ))}
-      </div>
+      <Menu
+        id='fade-menu'
+        anchorEl={anchorEl}
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        {values.map((element, index) => (
+          <MenuItem
+            key={index}
+            data-value={element.value}
+            name={name}
+            onClick={handleClose}
+          >
+            {element.name}
+          </MenuItem>
+        ))}
+      </Menu>
     </div>
   );
 };

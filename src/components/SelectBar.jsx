@@ -45,8 +45,8 @@ const SelectBar = ({ onResultChange }) => {
 
   const [selectedValue, setSelectedValue] = useState("");
 
-  const handleChange = (e) => {
-    setSelectedValue(e.target.value);
+  const handleChange = (searchValue) => {
+    setSelectedValue(searchValue);
   };
 
   useEffect(() => {
