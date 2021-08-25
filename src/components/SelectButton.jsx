@@ -3,7 +3,6 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
-import "./SelectBar.css";
 
 const SelectButton = ({ title, handleChange, name, values }) => {
   const showElement = useRef();
@@ -38,6 +37,11 @@ const SelectButton = ({ title, handleChange, name, values }) => {
         open={open}
         onClose={handleClose}
         TransitionComponent={Fade}
+        getContentAnchorEl={null}
+        // modify popup to go below the menu in materialUI
+        // https://medium.com/cloud-native-the-gathering/material-ui-how-to-change-a-menus-menuitems-anchor-to-popover-below-instead-of-over-ab222e175cfd
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
       >
         {values.map((element, index) => (
           <MenuItem
