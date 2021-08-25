@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
-
 import Contact from "./Contact";
-
 import linked from "../assets/footer/in.png";
 import facebook from "../assets/footer/facebook.png";
 import insta from "../assets/footer/insta.png";
