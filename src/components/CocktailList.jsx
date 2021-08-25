@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+
+import { useMediaQuery } from "react-responsive";
+
 import CocktailCard from "./CocktailCard";
 import SelectBar from "./SelectBar";
 import Search from "./Search";
@@ -17,10 +20,23 @@ const CocktailList = () => {
       .then((data) => setCocktails(data.drinks));
   }, []);
 
+  const isMobile = useMediaQuery({
+    query: "(max-width: 788px)",
+  });
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 788px)",
+  });
+
   return (
     <>
       <div>
-        <SelectBar onResultChange={handleChange} />
+        {isMobile && (
+          <SelectBar onResultChange={handleChange} desktop={false} />
+        )}{" "}
+        :{" "}
+        {isDesktop && (
+          <SelectBar onResultChange={handleChange} desktop={true} />
+        )}
       </div>
       <Search />
       <div className='list-container'>
