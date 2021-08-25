@@ -1,15 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Alert } from '@material-ui/lab';
 import { Snackbar } from '@material-ui/core';
 import { Slide } from '@material-ui/core';
 
+
+
 function SlideTransition(props) {
         return <Slide {...props} direction="up" />;
       }
 
 const CoeurDeRockeur = (props) => {
+    
+    const [favCocktail, setFavCocktail] = useState([]);
+
+    useEffect(() => {
+    localStorage.setItem('favorite', JSON.stringify([...favCocktail, props.name]))
+    }, [])
+
+    const [isFavorite, setIsFavorite] = useState(false);
 
     const [state, setState] = useState({
         open: false,
@@ -23,6 +33,7 @@ const CoeurDeRockeur = (props) => {
             fav : !state.fav,
             Transition
         });
+        setIsFavorite(!isFavorite);
     };
 
     const handleClose = (event, reason) => {

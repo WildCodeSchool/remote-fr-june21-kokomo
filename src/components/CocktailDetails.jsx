@@ -14,13 +14,14 @@ import Search from "./Search.jsx";
 const CocktailDetails = () => {
 
     const [cocktail, setCocktail] = useState({});
+    const [favoriteAdd, setFavoriteAdd] = useState([]);
     const { idDrink } = useParams();
     
     useEffect(() => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
         .then(response => response.json())
         .then(data => setCocktail(data.drinks[0]))
-    }, [<Search />])
+    }, [])
 
     const isMobile = useMediaQuery({
         query: '(max-width: 688px)'
@@ -44,6 +45,12 @@ const CocktailDetails = () => {
         }));
         return ingredients;
     }
+
+    const addFavorite = (cocktail) => {
+        const newFavoriteList = [...favoriteAdd, cocktail] 
+        setFavoriteAdd(newFavoriteList);
+        localStorage.setItem('favorite', JSON.stringify([favoriteAdd, cocktail]))
+      }
     
 
     return (
@@ -61,9 +68,9 @@ const CocktailDetails = () => {
                             </div>
                         </div>
                     </div>
-                    {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink}/>}
+                    {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={addFavorite} favoriteAdd={favoriteAdd}/>}
                     <div className="parent-ingredients">
-                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} />}
+                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={addFavorite} favoriteAdd={favoriteAdd}/>}
                         <AddButton desktop={isDesktop} />
                         <div className="child-ingredients">
                             <ul className="basic">
