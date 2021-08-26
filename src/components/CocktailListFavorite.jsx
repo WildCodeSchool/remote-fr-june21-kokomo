@@ -1,10 +1,12 @@
 import CocktailCard from "./CocktailCard";
 import Favorites from "./Favorites";
 
-const CocktailListFavorite = ({favorite}) => {
+import './FavoritesList.css'
+
+const CocktailListFavorite = ({favorites}) => {
     return ( 
-        <div>
-            {favorite && favorite
+        <div className='favorites-maindiv'>
+            {favorites && favorites
                 .map(user => <CocktailCard {...user} /> )}
         </div>
     )

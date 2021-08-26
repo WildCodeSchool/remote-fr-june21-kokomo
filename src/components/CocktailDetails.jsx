@@ -2,26 +2,25 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import AddButton from './AddButton.jsx';
-import CoeurDeRockeur from './CoeurDeRockeur.jsx';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-
-import './CocktailDetails.css';
+import AddButton from './AddButton.jsx';
+import CoeurDeRockeur from './CoeurDeRockeur.jsx';
 import Search from "./Search.jsx";
 
-const CocktailDetails = () => {
+import './CocktailDetails.css';
 
-    const [cocktail, setCocktail] = useState({});
-    const [favoriteAdd, setFavoriteAdd] = useState([]);
+const CocktailDetails = ({toogleFavorite, favorites}) => {
+
+    const [cocktail, setCocktail] = useState([]);
     const { idDrink } = useParams();
     
     useEffect(() => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
         .then(response => response.json())
         .then(data => setCocktail(data.drinks[0]))
-    }, [])
+    }, [<Search />])
 
     const isMobile = useMediaQuery({
         query: '(max-width: 688px)'
@@ -45,12 +44,6 @@ const CocktailDetails = () => {
         }));
         return ingredients;
     }
-
-    const addFavorite = (cocktail) => {
-        const newFavoriteList = [...favoriteAdd, cocktail] 
-        setFavoriteAdd(newFavoriteList);
-        localStorage.setItem('favorite', JSON.stringify([favoriteAdd, cocktail]))
-      }
     
 
     return (
@@ -68,9 +61,9 @@ const CocktailDetails = () => {
                             </div>
                         </div>
                     </div>
-                    {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={addFavorite} favoriteAdd={favoriteAdd}/>}
+                    {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
                     <div className="parent-ingredients">
-                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={addFavorite} favoriteAdd={favoriteAdd}/>}
+                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))}/>}
                         <AddButton desktop={isDesktop} />
                         <div className="child-ingredients">
                             <ul className="basic">

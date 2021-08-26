@@ -1,25 +1,13 @@
-import { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 import CocktailListFavorite from "./CocktailListFavorite";
 
+import './FavoritesList.css';
 
-
-const Favorites = () => {
-    const [favorite,setFavorite] = useState ([]);
-   
-
-useEffect(() => {
-    const getFavorite = () => {
-        const storeFavorite = JSON.parse(localStorage.getItem('favorite'))
-        setFavorite(storeFavorite);
-    }
-    getFavorite()
-}, [])
+const Favorites = ({favorites}) => {
 
     return (
-        <div>
-            <CocktailListFavorite favorite={favorite} />
+        <div className=''>
+            <h4 className='favorites-title'>Your favorites cocktails</h4>
+            <CocktailListFavorite favorites={favorites} />
         </div>
  )
 }

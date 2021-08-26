@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import CocktailList from './components/CocktailList';
 import CocktailDetails from './components/CocktailDetails';
@@ -10,6 +11,32 @@ import Favorites from './components/Favorites';
 import './App.css';
 
 const App = () => {
+
+  const [favorites,setFavorites] = useState ([]);
+
+  useEffect(() => {
+        const favoritesInLS = JSON.parse(localStorage.getItem('favorite'));
+        if (favoritesInLS) {
+          setFavorites(favoritesInLS);
+        }  
+  }, []);
+
+
+  useEffect (() => {
+    localStorage.setItem('favorite', JSON.stringify(favorites))
+  },[favorites])
+
+  const toogleFavorite = (cocktail) => {
+    if (favorites.includes(cocktail)) {
+      const newFavoriteList = favorites.filter(id => id != cocktail)
+      setFavorites(newFavoriteList);
+    } else {
+      const newFavoriteList = [...favorites, cocktail]
+      setFavorites(newFavoriteList);
+    }
+  }
+
+
   return (
     <div className="app">
       <Age />
@@ -23,13 +50,13 @@ const App = () => {
               <CocktailList />
             </Route>
             <Route exact path="/cocktails/:idDrink">
-              <CocktailDetails />
+              <CocktailDetails favorites={favorites} toogleFavorite={toogleFavorite} />
             </Route>
             <Route exact path="/contact">
               <Contact />
             </Route>
             <Route exact path ='/favorites'>
-              <Favorites />
+              <Favorites favorites={favorites} />
             </Route>
           </Switch>
           <Footer />
