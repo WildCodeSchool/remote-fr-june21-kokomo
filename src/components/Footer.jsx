@@ -8,7 +8,7 @@ import Drawers from "./Drawers";
 
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({ handleChange }) => {
   return (
     <>
       <div className='footer-main'>
@@ -35,7 +35,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faInstagram} size='2x' />
           </a>
         </div>
-        <Drawers />
+        <Drawers handleChange={handleChange} />
       </div>
     </>
   );

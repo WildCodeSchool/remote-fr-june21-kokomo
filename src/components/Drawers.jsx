@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Fragment, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import SwipeableDrawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SwipeableTemporaryDrawer() {
+export default function Drawers({ handleChange }) {
   const classes = useStyles();
   const [state, setState] = useState({
     top: false,
@@ -36,7 +36,6 @@ export default function SwipeableTemporaryDrawer() {
       return;
     }
 
-    console.log("setState", open, menu);
     setState({ ...state, [menu]: open });
   };
 
@@ -50,7 +49,7 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(menu, false)}
     >
       <List>
-        <SelectBar />
+        <SelectBar onResultChange={handleChange} />
       </List>
     </div>
   );
@@ -62,12 +61,12 @@ export default function SwipeableTemporaryDrawer() {
           <Button className='burger' onClick={toggleDrawer(anchor, true)}>
             <FontAwesomeIcon icon={faBars} size='2x' />
           </Button>
+
           <SwipeableDrawer
             anchor={anchor}
             variant='persistent'
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
           >
             {list(anchor)}
           </SwipeableDrawer>

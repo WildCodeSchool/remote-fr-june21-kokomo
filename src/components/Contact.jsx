@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <div className='contact-container'>
-      <h3 className='contact-title'>Contactez-nous !</h3>
+      <h3 className='contact-title'>Contact-us!</h3>
       <form className='contact-form'>
         <div className='question '>
           <label>
