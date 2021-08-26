@@ -7,7 +7,7 @@
 
 /* mobile */
 @media screen and (max-width: 688px) {
-  .buttons-container {
+  /* .buttons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@
   Menu {
     position: absolute;
     bottom: 30px;
-  }
+  } */
 }
 
 /* desktop */

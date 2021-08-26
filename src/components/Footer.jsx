@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+import Drawers from "./Drawers";
 
 import "./Footer.css";
 
@@ -34,14 +35,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faInstagram} size='2x' />
           </a>
         </div>
-        <a
-          href='https://www.instagram.com'
-          target='_blank'
-          rel='noreferrer'
-          className='footer-burger'
-        >
-          <FontAwesomeIcon icon={faBars} size='2x' />
-        </a>
+        <Drawers />
       </div>
     </>
   );
