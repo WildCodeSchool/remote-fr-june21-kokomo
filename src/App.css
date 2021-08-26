@@ -1,103 +1,98 @@
 .white-container {
-    background-color: #F6F2F1;
+  background-color: #f6f2f1;
 }
 
 .green-container {
-    background-color: #518A8B;
-    color: #F6F2F1;
+  background-color: #518a8b;
+  color: #f6f2f1;
 }
 
-.list-container{
-    margin-top: 15%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #fff;
+.list-container {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #fff;
 }
 
-h1{
-    text-align: center;
-    color: rgb(250, 138, 138);
-    padding: 20px;
+h1 {
+  text-align: center;
+  color: rgb(250, 138, 138);
+  padding: 20px;
 }
-
 
 .card-container {
-    display: flex;
-    justify-content: center;
-    width: 90%;
-    height: 60%;
-    margin: 4%;
-    box-shadow: -1px 5px 3px -3px rgba(64, 37, 37, 0.4);
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 60%;
+  margin: 4%;
+  box-shadow: -1px 5px 3px -3px rgba(64, 37, 37, 0.4);
 }
 
 .cocktail-card {
-    display: flex;
-    flex-direction: column;
-    /* background: rgb(154,194,186); */
-    background-image: linear-gradient(#9ac2ba,#9ac2ba, #36685d);
-    width: 100%; 
-    height: 50%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(#9ac2ba, #9ac2ba, #36685d);
+  width: 100%;
+  height: 50%;
 }
 
-  
 @keyframes cocktail-card {
-    0% {
-      background: #9ac2ba;
-    }
-    100% {
-      background: #36685d;
-    }
+  0% {
+    background: #9ac2ba;
   }
+  100% {
+    background: #36685d;
+  }
+}
+
 .grand-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .parent-background {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 65px;
-    width: 80%;
-    margin: 10px;
-    background-image: url("./assets/pattern.jpg");
-    background-repeat: repeat-x;
-    background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  width: 80%;
+  margin: 10px;
+  background-image: url("./assets/pattern.jpg");
+  background-repeat: repeat-x;
+  background-size: 100%;
 }
 
 .child-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    background-color: #f6f2f1;
-    height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  background-color: #f6f2f1;
+  height: 80%;
 }
 
 .name {
-    color: #518A8B;
-    font-style: uppercase;
-    font-size: 1.2em;
-    font-weight: 500;
+  color: #518a8b;
+  font-style: uppercase;
+  font-weight: 500;
 }
 
 @media only screen and (min-width: 688px) {
-    
-    .card-container {
-        width: 20%;
-        margin: 1%;
-    }
+  .card-container {
+    width: 20%;
+    margin: 1%;
+  }
 
-    .list-container {
-        margin-top: 4%;
-    }
+  .list-container {
+    margin-top: 4%;
+  }
 
-    .cocktail-card:hover {
-        animation: cocktail-card 2s linear infinite alternate both;
-    }
-
+  .cocktail-card:hover {
+    animation: cocktail-card 2s linear infinite alternate both;
+  }
 }

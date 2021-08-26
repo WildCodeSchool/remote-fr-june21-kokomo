@@ -5,7 +5,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className='top-header'>
-      <div className="h-background">
+      <div className='h-background'>
         <div className='leaves-background-title'>
           <div className='h-title'>
             <NavLink className='link-kokomo' to='/cocktails'>
