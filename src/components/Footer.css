@@ -60,3 +60,29 @@ a:focus.footer-burger,
     display: none;
   }
 }
+
+.footer-link {
+    font-size: 1.8em;
+}
+
+@keyframes heartbeat {
+    0% {
+      transform: scale(1.4);
+    }
+    
+    35% {
+      transform: scale(1.8);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+    
+    65% {
+      transform: scale(1.4);
+    }
+    
+    80% {
+      transform: scale(1); 
+    }
+  }

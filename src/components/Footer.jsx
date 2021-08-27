@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -15,7 +15,7 @@ const Footer = () => {
           Contact-us
         </NavLink>
         <div className='footer-icons'>
-          <NavLink className='bookmark-fav' to='/favorite'>
+          <NavLink className='bookmark-fav' to='/favorites'>
             <FontAwesomeIcon icon={faBookmark} size='2x' />
           </NavLink>
           <a

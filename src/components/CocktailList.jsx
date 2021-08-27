@@ -38,7 +38,7 @@ const CocktailList = () => {
       <Search />
       <div className='list-container'>
         {cocktails.map((cocktail) => (
-          <CocktailCard key={cocktail.idDrink} {...cocktail} />
+          <CocktailCard cocktails={cocktails} key={cocktail.idDrink} {...cocktail} />
         ))}
       </div>
     </>
