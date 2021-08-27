@@ -4,6 +4,7 @@
   align-items: center;
   background-color: rgb(255, 202, 196);
   background-size: 30%;
+  border-bottom: rgb(255, 202, 196) 100px solid;
 }
 
 .contact-title {
