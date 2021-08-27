@@ -1,9 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import Contact from './Contact';
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import CocktailListFavorite from './CocktailListFavorite';
 import linked from '../assets/footer/in.png';
 import facebook from '../assets/footer/facebook.png';
 import like from '../assets/footer/like.png';

@@ -1,5 +1,4 @@
 import CocktailCard from "./CocktailCard";
-import Favorites from "./Favorites";
 
 import './FavoritesList.css'
 

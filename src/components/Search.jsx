@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import './Header.css'
-import CocktailDetails from "./CocktailDetails";
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");

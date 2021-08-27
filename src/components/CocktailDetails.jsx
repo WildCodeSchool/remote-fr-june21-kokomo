@@ -13,7 +13,7 @@ import './CocktailDetails.css';
 
 const CocktailDetails = ({toogleFavorite, favorites}) => {
 
-    const [cocktail, setCocktail] = useState([]);
+    const [cocktail, setCocktail] = useState({});
     const { idDrink } = useParams();
     
     useEffect(() => {

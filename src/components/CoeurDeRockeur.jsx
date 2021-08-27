@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Alert } from '@material-ui/lab';
@@ -11,7 +11,7 @@ function SlideTransition(props) {
         return <Slide {...props} direction="up" />;
       }
 
-const CoeurDeRockeur = ({desktop, name, image, handleFavoriteClick, isFavorite}) => {
+const CoeurDeRockeur = ({desktop, name, handleFavoriteClick}) => {
     
     const [state, setState] = useState({
         open: false,
