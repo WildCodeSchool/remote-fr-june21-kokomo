@@ -16,7 +16,7 @@ const App = () => {
   const [favorites, toogleFavorite] = useFavoris()
 
   return (
-    <div className="app">
+    <div className='app'>
       <Age />
         <BrowserRouter>
           <Header />
@@ -41,6 +41,6 @@ const App = () => {
         </BrowserRouter>
       </div>
   );
-}
+};
 
 export default App;

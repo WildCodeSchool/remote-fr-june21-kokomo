@@ -1,29 +1,50 @@
 import { NavLink } from 'react-router-dom';
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import linked from '../assets/footer/in.png';
-import facebook from '../assets/footer/facebook.png';
-import like from '../assets/footer/like.png';
-import insta from '../assets/footer/insta.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import './Footer.css';
+import "./Footer.css";
 
 const Footer = () => {
-    return (
-        <div className='footer-main'>
-            <div className='logo-container'>
-                <img src={linked} className='footer-logo' alt='linkeldin-logo' />
-                <img src={insta} className='footer-logo' alt='insta-logo' />
-                <img src={facebook} className='footer-logo' alt='facebook-logo' />
-                <img src={like} className='footer-logo' alt='like-logo' />
-            </div>
-            <NavLink to="/favorites">
-                <FontAwesomeIcon  className='footer-heart' icon={ faHeart } size={"2x"} />
-            </NavLink>
-           <NavLink className='footer-link' to="/contact">Contact us</NavLink>
+  return (
+    <>
+      <div className='footer-main'>
+        <NavLink className='footer-link' to='/contact'>
+          Contact-us
+        </NavLink>
+        <div className='footer-icons'>
+          <NavLink className='bookmark-fav' to='/favorites'>
+            <FontAwesomeIcon icon={faBookmark} size='2x' />
+          </NavLink>
+          <a
+            href='https://www.facebook.com'
+            className='facebook social'
+            alt='facebook'
+          >
+            <FontAwesomeIcon icon={faFacebook} size='2x' />
+          </a>
+          <a
+            href='https://www.instagram.com'
+            target='_blank'
+            rel='noreferrer'
+            className='instagram social'
+          >
+            <FontAwesomeIcon icon={faInstagram} size='2x' />
+          </a>
         </div>
-    );
-}
+        <a
+          href='https://www.instagram.com'
+          target='_blank'
+          rel='noreferrer'
+          className='footer-burger'
+        >
+          <FontAwesomeIcon icon={faBars} size='2x' />
+        </a>
+      </div>
+    </>
+  );
+};
 
 export default Footer;
