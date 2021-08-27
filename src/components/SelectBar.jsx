@@ -3,7 +3,7 @@ import SelectButton from "./SelectButton";
 
 import "./SelectBar.css";
 
-const SelectBar = () => {
+const SelectBar = ({ onResultChange }) => {
   const ingredientElements = [
     {
       value: "i=Vodka",
@@ -32,7 +32,7 @@ const SelectBar = () => {
       name: "Soft Drink / Soda",
     },
   ];
-  const acoholicElements = [
+  const alcoholicElements = [
     {
       value: "a=Alcoholic",
       name: "Alcoholic",
@@ -44,51 +44,41 @@ const SelectBar = () => {
   ];
 
   const [selectedValue, setSelectedValue] = useState("");
-  const [result, setResults] = useState([]);
 
-  const handleChange = (e) => {
-    setSelectedValue(e.target.value);
+  const handleChange = (searchValue) => {
+    setSelectedValue(searchValue);
   };
 
   useEffect(() => {
-    //doit stocker fetch dans une const
-    const recupData = () => {
-      fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${selectedValue}`
-      )
-        .then((response) => response.json())
-        .then((data) => setResults(data.drinks));
-    };
-    recupData();
+    onResultChange(selectedValue);
   }, [selectedValue]);
 
-  useEffect(() => {
-    console.log(result);
-  }, [result]);
-
   return (
-    <>
+    <div className='container-full-height'>
       <div className='buttons-container'>
         <SelectButton
           title='Ingredient'
+          name='ingredientButton'
           selectedValue={selectedValue}
           values={ingredientElements}
           handleChange={handleChange}
         />
         <SelectButton
           title='Category'
+          name='categoryButton'
           selectedValue={selectedValue}
           values={categoryElements}
           handleChange={handleChange}
         />
         <SelectButton
           title='Alcoholic'
+          name='alcoholicButton'
           selectedValue={selectedValue}
-          values={acoholicElements}
+          values={alcoholicElements}
           handleChange={handleChange}
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import CocktailCard from "./CocktailCard";
+import SelectBar from "./SelectBar";
 import Search from "./Search";
 
-const CocktailList = () => {
-  const [cocktails, setCocktails] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`)
-      .then((response) => response.json())
-      .then((data) => setCocktails(data.drinks));
-  }, []);
+const CocktailList = ({ cocktails, handleChange }) => {
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 688px)",
+  });
 
   return (
     <>
+      <div>{isDesktop && <SelectBar onResultChange={handleChange} />}</div>
       <Search />
       <div className='list-container'>
         {cocktails.map((cocktail) => (
-          <CocktailCard key={cocktail.idDrink} {...cocktail} />
+          <CocktailCard cocktails={cocktails} key={cocktail.idDrink} {...cocktail} />
         ))}
       </div>
     </>

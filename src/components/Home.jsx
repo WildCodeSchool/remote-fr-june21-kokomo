@@ -1,17 +1,14 @@
-import CocktailList from './CocktailList';
-import Footer from './Footer';
+import CocktailList from "./CocktailList";
+import Footer from "./Footer";
 
-import './Home.css';
-
+import "./Home.css";
 
 const Home = () => {
-
-    return (
-        <>
-            <CocktailList />
-            <Footer />
-        </>
-    )
-}
+  return (
+    <>
+      <CocktailList />
+    </>
+  );
+};
 
 export default Home;

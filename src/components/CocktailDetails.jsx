@@ -2,16 +2,16 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import AddButton from './AddButton.jsx';
-import CoeurDeRockeur from './CoeurDeRockeur.jsx';
 import { useMediaQuery } from 'react-responsive';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-
-import './CocktailDetails.css';
+import AddButton from './AddButton.jsx';
+import CoeurDeRockeur from './CoeurDeRockeur.jsx';
 import Search from "./Search.jsx";
 
-const CocktailDetails = () => {
+import './CocktailDetails.css';
+
+const CocktailDetails = ({ toogleFavorite, favorites }) => {
 
     const [cocktail, setCocktail] = useState({});
     const { idDrink } = useParams();
@@ -61,17 +61,17 @@ const CocktailDetails = () => {
                                 </div>
                             </div>
                         </div>
-                        {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} />}
-                        <div className="parent-ingredients">
-                            {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} />}
-                            <AddButton desktop={isDesktop} />
-                            <div className="child-ingredients">
-                                <ul className="basic">
-                                    {getIngredients(cocktail).map((ingredient, i) => (
-                                        <li className="ingredients-list" key={i}> {ingredient.measure} {ingredient.name} </li>
-                                    ))}
-                                </ul>
-                            </div>
+                    </div>
+                    {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
+                    <div className="parent-ingredients">
+                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
+                        <AddButton desktop={isDesktop} />
+                        <div className="child-ingredients">
+                            <ul className="basic">
+                                {getIngredients(cocktail).map((ingredient, i) => (
+                                    <li className="ingredients-list" key={i}> {ingredient.measure} {ingredient.name} </li>
+                                ))}
+                            </ul>
                         </div>
                         <div className="recipe">
                             <p>{cocktail.strInstructions}</p>
