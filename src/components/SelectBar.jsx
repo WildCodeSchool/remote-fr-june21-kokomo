@@ -50,17 +50,7 @@ const SelectBar = ({ onResultChange }) => {
   };
 
   useEffect(() => {
-    //doit stocker fetch dans une const
-    const recupData = () => {
-      fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${selectedValue}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          onResultChange(data.drinks);
-        });
-    };
-    recupData();
+    onResultChange(selectedValue);
   }, [selectedValue]);
 
   return (

@@ -13,14 +13,19 @@
 a.facebook,
 a.instagram,
 .bookmark-fav,
-a.footer-burger {
+button.burger {
   color: white;
   padding: 0px 10px;
 }
 
+a:hover.facebook,
+a:hover.instagram,
+.bookmark-fav:hover {
+  color: #518a8b;
+}
+
 a:focus.facebook,
 a:focus.instagram,
-a:focus.footer-burger,
 .bookmark-fav:focus {
   color: #518a8b;
 }
@@ -31,11 +36,12 @@ a:focus.footer-burger,
   width: 45%;
 }
 .footer-link {
+  padding-left: 10px;
   text-decoration: none;
   color: #f6f2f1;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 5vw, 1rem);
 }
 
 .footer-link:hover {
@@ -46,17 +52,21 @@ a:focus.footer-burger,
 }
 
 @media screen and (min-width: 688px) {
+  .footer-main {
+    position: unset;
+  }
+
   .footer-icons {
     display: flex;
     justify-content: flex-end;
-    width: 60%;
+    width: 85%;
   }
   a.facebook,
   a.instagram,
   .bookmark-fav {
     padding: 0px 30px;
   }
-  a.footer-burger {
+  button.burger {
     display: none;
   }
 }
