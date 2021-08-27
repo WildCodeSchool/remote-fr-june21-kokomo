@@ -6,7 +6,12 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.image {
+  filter: grayscale(100%);
+}
+.image:hover {
+  filter: none;
+}
 .cocktail-card {
   background-color: #518a8b;
   width: 90%;
