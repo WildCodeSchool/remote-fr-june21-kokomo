@@ -3,6 +3,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-bottom: white 100px solid;
+}
+
+.list-container {
+  border-bottom: white 100px solid;
 }
 
 .cocktail-name {
