@@ -35,7 +35,7 @@ const Footer = ({ handleChange }) => {
             <FontAwesomeIcon icon={faInstagram} size='2x' />
           </a>
         </div>
-        {(location.pathname === "/" || location.pathname === "/cochtails") && (
+        {(location.pathname === "/" || location.pathname === "/cocktails") && (
           <Drawers handleChange={handleChange} />
         )}
       </div>
