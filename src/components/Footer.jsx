@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-
+import { NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +8,7 @@ import Drawers from "./Drawers";
 import "./Footer.css";
 
 const Footer = ({ handleChange }) => {
+  let location = useLocation();
   return (
     <>
       <div className='footer-main'>
@@ -35,7 +35,9 @@ const Footer = ({ handleChange }) => {
             <FontAwesomeIcon icon={faInstagram} size='2x' />
           </a>
         </div>
-        <Drawers handleChange={handleChange} />
+        {(location.pathname === "/" || location.pathname === "/cochtails") && (
+          <Drawers handleChange={handleChange} />
+        )}
       </div>
     </>
   );
