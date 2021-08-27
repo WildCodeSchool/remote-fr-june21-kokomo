@@ -27,7 +27,9 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 5px;
+    margin-bottom: 10px;
 }
+
 
 .back {
     color: #36685D;
@@ -77,6 +79,7 @@
 
 .card-container.media-details {
     flex-direction: column;
+    display: flex;
 }
 
 
@@ -85,7 +88,6 @@
     .card-container.media-details {
     width: 90%;
     margin: auto;
-    /* Il faudra sûrement mettre margin bottom à 0 quand les commentaires seront ajoutés (mais pas en media query) */
     }
 
     .details-container {
@@ -180,4 +182,7 @@
         font-size: 1.5em;
     }
 
+    .link{
+        margin-top:  -60px;
+    }
 }

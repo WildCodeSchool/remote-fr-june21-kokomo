@@ -11,15 +11,15 @@ import Search from "./Search.jsx";
 
 import './CocktailDetails.css';
 
-const CocktailDetails = ({toogleFavorite, favorites}) => {
+const CocktailDetails = ({ toogleFavorite, favorites }) => {
 
     const [cocktail, setCocktail] = useState({});
     const { idDrink } = useParams();
-    
+
     useEffect(() => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
-        .then(response => response.json())
-        .then(data => setCocktail(data.drinks[0]))
+            .then(response => response.json())
+            .then(data => setCocktail(data.drinks[0]))
     }, [<Search />])
 
     const isMobile = useMediaQuery({
@@ -44,41 +44,42 @@ const CocktailDetails = ({toogleFavorite, favorites}) => {
         }));
         return ingredients;
     }
-    
+
 
     return (
         <>
-        <Search />
-        <section className="details-container">
-            <div className="card-container media-details">
-                <Link to="/cocktails" className="link"><FontAwesomeIcon className="back" icon={ faChevronLeft } size={isDesktop ? "2x" : "lg"}/></Link>
-                <div className="cocktail-card media-details">
-                    <img className="image media-details" src={cocktail.strDrinkThumb} alt="cocktail"/>
-                    <div className="grand-background media-details">
-                        <div className="parent-background media-details">
-                            <div className="child-background media-details">
-                                <h2 className="cocktail-name">{cocktail.strDrink}</h2>
+            <Search />
+            <section className="details-container">
+                <div className="card-container media-details">
+                    <Link to="/cocktails" className="link"><FontAwesomeIcon className="back" icon={faChevronLeft} size={isDesktop ? "2x" : "lg"} /></Link>
+                    <div className="cocktail-card media-details">
+                        <img className="image media-details" src={cocktail.strDrinkThumb} alt="cocktail" />
+                        <div className="grand-background media-details">
+                            <div className="parent-background media-details">
+                                <div className="child-background media-details">
+                                    <h2 className="cocktail-name">{cocktail.strDrink}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    
                     {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
                     <div className="parent-ingredients">
-                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))}/>}
+                        {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
                         <AddButton desktop={isDesktop} />
                         <div className="child-ingredients">
                             <ul className="basic">
-                                    {getIngredients(cocktail).map((ingredient, i) => (
+                                {getIngredients(cocktail).map((ingredient, i) => (
                                     <li className="ingredients-list" key={i}> {ingredient.measure} {ingredient.name} </li>
-                                    ))}
+                                ))}
                             </ul>
                         </div>
                     </div>
-                    <div className="recipe">
-                        <p>{cocktail.strInstructions}</p>
+                        <div className="recipe">
+                            <p>{cocktail.strInstructions}</p>
+                        </div>
                     </div>
                 </div>
-            </div>    
-        </section>
+            </section>
         </>
     )
 }
