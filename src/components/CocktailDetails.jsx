@@ -95,8 +95,8 @@ const CocktailDetails = ({ toogleFavorite, favorites }) => {
                   )}
                 />
               )}
-              <AddButton desktop={isDesktop} />
-              <div className='child-ingredients'>
+              <AddButton className='arrowBtn' desktop={isDesktop} />
+              <div className='child-ingredients arrow'>
                 <ul className='basic'>
                   {getIngredients(cocktail).map((ingredient, i) => (
                     <li className='ingredients-list' key={i}>
