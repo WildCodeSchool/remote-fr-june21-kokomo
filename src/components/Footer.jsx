@@ -16,7 +16,7 @@ const Footer = ({ handleChange }) => {
           Contact-us
         </NavLink>
         <div className='footer-icons'>
-          <NavLink className='bookmark-fav' to='/favorite'>
+          <NavLink className='bookmark-fav' to='/favorites'>
             <FontAwesomeIcon icon={faBookmark} size='2x' />
           </NavLink>
           <a

@@ -6,12 +6,15 @@ import Header from "./components/Header";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Age from "./components/Age";
+import Favorites from "./components/Favorites";
+import useFavoris from "./components/useFavoris";
 
 import "./components/Home.css";
 import "./App.css";
 
 const App = () => {
   const [cocktails, setCocktails] = useState([]);
+  const [favorites, toogleFavorite] = useFavoris();
 
   useEffect(() => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`)
@@ -48,10 +51,16 @@ const App = () => {
             />
           </Route>
           <Route exact path='/cocktails/:idDrink'>
-            <CocktailDetails />
+            <CocktailDetails
+              favorites={favorites}
+              toogleFavorite={toogleFavorite}
+            />
           </Route>
           <Route exact path='/contact'>
             <Contact />
+          </Route>
+          <Route exact path='/favorites'>
+            <Favorites favorites={favorites} />
           </Route>
         </Switch>
         <Footer handleChange={onSearchByCriteria} />
