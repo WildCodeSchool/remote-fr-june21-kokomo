@@ -61,7 +61,7 @@ const CocktailDetails = ({ toogleFavorite, favorites }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                     {isMobile && <CoeurDeRockeur desktop={false} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
                     <div className="parent-ingredients">
                         {isDesktop && <CoeurDeRockeur desktop={isDesktop} name={cocktail.strDrink} image={cocktail.strDrinkThumb} handleFavoriteClick={() => toogleFavorite(cocktail)} isFavorite={Boolean(favorites.find(c => favorites.includes(c.idDrink)))} />}
@@ -73,6 +73,7 @@ const CocktailDetails = ({ toogleFavorite, favorites }) => {
                                 ))}
                             </ul>
                         </div>
+                    </div>
                         <div className="recipe">
                             <p>{cocktail.strInstructions}</p>
                         </div>
