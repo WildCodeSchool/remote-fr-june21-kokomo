@@ -6,12 +6,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.image {
-  filter: grayscale(100%);
-}
-.image:hover {
-  filter: none;
-}
+
 .cocktail-card {
   background-color: #518a8b;
   width: 90%;
@@ -43,6 +38,16 @@
   align-items: center;
 }
 
+h3.sentence {
+  width: 100%;
+  font-family: "Cookie", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+  color: #f39d9e;
+  line-height: 2.5rem;
+}
+
 .navlink {
   display: block;
 }
@@ -54,5 +59,15 @@
 @media only screen and (min-width: 688px) {
   .card-container {
     width: 20%;
+  }
+  h3.sentence {
+    font-size: 4rem;
+    margin: 0px 10px 30px 10px;
+  }
+  .image-list {
+    filter: grayscale(100%);
+  }
+  .image-list:hover {
+    filter: none;
   }
 }

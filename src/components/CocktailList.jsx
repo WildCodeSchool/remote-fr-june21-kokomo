@@ -13,7 +13,7 @@ const CocktailList = ({ cocktails, handleChange, sentence }) => {
       <div>{isDesktop && <SelectBar onResultChange={handleChange} />}</div>
       <Search />
       <div className='list-container'>
-        <h3 className='sentence'>{sentence}</h3>
+        <h3 className='sentence tracking-in-contract'>{sentence}</h3>
         {cocktails.map((cocktail) => (
           <CocktailCard
             cocktails={cocktails}

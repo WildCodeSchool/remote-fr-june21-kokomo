@@ -25,29 +25,29 @@ const SelectBar = ({ onResultChange }) => {
     {
       value: "c=Shot",
       name: "Shot",
-      sentence: "Shot, some like them short and strong",
+      sentence: "Shot, some like them strong!",
     },
     {
       value: "c=Cocktail",
       name: "Cocktail",
-      sentence: "Cocktail, so you like mixology? Me too",
+      sentence: "Cocktail, so you like mixology?",
     },
     {
       value: "c=Soft Drink / Soda",
       name: "Soft Drink / Soda",
-      sentence: "Soda is the best for your sweet tooth",
+      sentence: "Soda? Sweet tooth you!",
     },
   ];
   const alcoholicElements = [
     {
       value: "a=Alcoholic",
       name: "Alcoholic",
-      sentence: "One drink of alcohol, one glass of water. You're welcome",
+      sentence: "One drink of alcohol, one glass of water. You're welcome!",
     },
     {
       value: "a=Non_Alcoholic",
       name: "Non Alcoholic",
-      sentence: "No alcohol for you babe",
+      sentence: "No alcohol for you babe!",
     },
   ];
 

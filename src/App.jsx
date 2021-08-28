@@ -14,7 +14,9 @@ import "./App.css";
 
 const App = () => {
   const [cocktails, setCocktails] = useState([]);
-  const [sentence, setSentence] = useState("");
+  const [sentence, setSentence] = useState(
+    "Let's put some color in your drink!"
+  );
   const [favorites, toogleFavorite] = useFavoris();
 
   useEffect(() => {
