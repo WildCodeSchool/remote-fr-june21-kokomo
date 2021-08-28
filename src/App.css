@@ -8,9 +8,10 @@
 }
 
 .list-container {
-  margin-top: 15%;
+  margin-top: 10%;
   display: flex;
   justify-content: center;
+  border-bottom: white 100px solid;
   flex-wrap: wrap;
   background-color: #fff;
 }
@@ -89,7 +90,7 @@ h1 {
   }
 
   .list-container {
-    margin-top: 4%;
+    margin-top: 3%;
   }
 
   .cocktail-card:hover {
