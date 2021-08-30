@@ -1,15 +1,14 @@
 import CocktailListFavorite from "./CocktailListFavorite";
 
-import './FavoritesList.css';
+import "./FavoritesList.css";
 
-const Favorites = ({favorites}) => {
+const Favorites = ({ favorites }) => {
+  return (
+    <div>
+      <h5 className='favorites-title'>Your favorites cocktails</h5>
+      <CocktailListFavorite favorites={favorites} />
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <h4 className='favorites-title'>Your favorites cocktails</h4>
-            <CocktailListFavorite favorites={favorites} />
-        </div>
- )
-}
- 
 export default Favorites;

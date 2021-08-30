@@ -14,6 +14,9 @@ import "./App.css";
 
 const App = () => {
   const [cocktails, setCocktails] = useState([]);
+  const [sentence, setSentence] = useState(
+    "Let's put some color in your drink!"
+  );
   const [favorites, toogleFavorite] = useFavoris();
 
   useEffect(() => {
@@ -22,13 +25,15 @@ const App = () => {
       .then((data) => setCocktails(data.drinks));
   }, []);
 
-  const onSearchByCriteria = (selectedValue) => {
+  const onSearchByCriteria = (selectedValue, selectedSentence) => {
+    console.log(selectedValue, selectedSentence);
     fetch(
       `https://www.thecocktaildb.com/api/json/v1/1/filter.php?${selectedValue}`
     )
       .then((response) => response.json())
       .then((data) => {
         setCocktails(data.drinks);
+        setSentence(selectedSentence);
       });
   };
 
@@ -41,12 +46,14 @@ const App = () => {
           <Route exact path='/'>
             <CocktailList
               cocktails={cocktails}
+              sentence={sentence}
               handleChange={onSearchByCriteria}
             />
           </Route>
           <Route exact path='/cocktails'>
             <CocktailList
               cocktails={cocktails}
+              sentence={sentence}
               handleChange={onSearchByCriteria}
             />
           </Route>

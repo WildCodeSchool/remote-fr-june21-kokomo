@@ -16,8 +16,8 @@ const SelectButton = ({ title, handleChange, name, values }) => {
 
   const handleClose = (event) => {
     setAnchorEl(null);
-    const { value } = event.currentTarget.dataset;
-    handleChange(value);
+    const { value, sentence } = event.currentTarget.dataset;
+    handleChange(value, sentence);
   };
 
   return (
@@ -46,6 +46,7 @@ const SelectButton = ({ title, handleChange, name, values }) => {
         {values.map((element, index) => (
           <MenuItem
             key={index}
+            data-sentence={element.sentence}
             data-value={element.value}
             name={name}
             onClick={handleClose}

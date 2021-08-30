@@ -8,7 +8,7 @@ const Header = () => {
       <div className='h-background'>
         <div className='leaves-background-title'>
           <div className='h-title'>
-            <NavLink className='link-kokomo' to='/cocktails'>
+            <NavLink className='link-kokomo' to='/'>
               <h3>Kokomo</h3>
             </NavLink>
           </div>

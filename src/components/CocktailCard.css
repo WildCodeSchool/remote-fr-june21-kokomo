@@ -50,4 +50,10 @@
   .card-container {
     width: 20%;
   }
+  .image-list {
+    filter: grayscale(100%);
+  }
+  .image-list:hover {
+    filter: none;
+  }
 }

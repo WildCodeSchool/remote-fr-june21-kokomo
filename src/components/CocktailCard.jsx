@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import './CocktailCard.css';
+import "./CocktailCard.css";
 
 const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
   return (
@@ -11,7 +11,7 @@ const CocktailCard = ({ strDrinkThumb, strDrink, idDrink }) => {
           to={`/cocktails/${idDrink}`}
           alt={strDrink}
         >
-          <img className='image' src={strDrinkThumb} alt={strDrink} />
+          <img className='image-list' src={strDrinkThumb} alt={strDrink} />
         </NavLink>
         <figcaption className='grand-background media-card'>
           <div className='parent-background media-card'>
